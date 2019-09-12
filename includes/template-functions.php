@@ -3,12 +3,12 @@
  * Template functions
  *
  * @package    WordPress/ClassicPress
- * @subpackage BS_Theme
+ * @subpackage Beeline_Theme
  * @since      1.0.0
  */
 
 // Namespace specificity for theme functions & filters.
-namespace BS_Theme\Includes;
+namespace Beeline_Theme\Includes;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -40,7 +40,7 @@ function body_classes( $classes ) {
 	return $classes;
 
 }
-add_filter( 'body_class', 'BS_Theme\Includes\body_classes' );
+add_filter( 'body_class', 'Beeline_Theme\Includes\body_classes' );
 
 /**
  * Pingback header
@@ -58,4 +58,4 @@ function pingback_header() {
 	}
 
 }
-add_action( 'wp_head', 'BS_Theme\Includes\pingback_header' );
+add_action( 'wp_head', 'Beeline_Theme\Includes\pingback_header' );

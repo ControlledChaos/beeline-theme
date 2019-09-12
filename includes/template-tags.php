@@ -3,12 +3,12 @@
  * Template tags
  *
  * @package    WordPress/ClassicPress
- * @subpackage BS_Theme
+ * @subpackage Beeline_Theme
  * @since      1.0.0
  */
 
 // Namespace specificity for theme functions & filters.
-namespace BS_Theme\Tags;
+namespace Beeline_Theme\Tags;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -165,7 +165,7 @@ function posted_on() {
 
 	$posted_on = sprintf(
 		/* translators: %s: post date. */
-		esc_html_x( 'Posted on %s', 'post date', 'bs-theme' ),
+		esc_html_x( 'Posted on %s', 'post date', 'beeline-theme' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
@@ -185,7 +185,7 @@ function posted_on() {
 function posted_by() {
 
 	$byline = sprintf(
-		esc_html_x( 'by %s', 'post author', 'bs-theme' ),
+		esc_html_x( 'by %s', 'post author', 'beeline-theme' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
@@ -207,15 +207,15 @@ function entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
 
-		$categories_list = get_the_category_list( esc_html__( ', ', 'bs-theme' ) );
+		$categories_list = get_the_category_list( esc_html__( ', ', 'beeline-theme' ) );
 		if ( $categories_list ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'bs-theme' ) . '</span>', $categories_list );
+			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'beeline-theme' ) . '</span>', $categories_list );
 		}
 
-		$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'bs-theme' ) );
+		$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'beeline-theme' ) );
 
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'bs-theme' ) . '</span>', $tags_list );
+			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'beeline-theme' ) . '</span>', $tags_list );
 		}
 
 	}
@@ -226,7 +226,7 @@ function entry_footer() {
 		comments_popup_link(
 			sprintf(
 				wp_kses(
-					__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'bs-theme' ),
+					__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'beeline-theme' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -242,7 +242,7 @@ function entry_footer() {
 	edit_post_link(
 		sprintf(
 			wp_kses(
-				__( 'Edit <span class="screen-reader-text">%s</span>', 'bs-theme' ),
+				__( 'Edit <span class="screen-reader-text">%s</span>', 'beeline-theme' ),
 				array(
 					'span' => array(
 						'class' => array(),

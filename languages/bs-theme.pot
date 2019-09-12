@@ -148,7 +148,7 @@ msgid "BS Theme"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://github.com/ControlledChaos/bs-theme"
+msgid "https://github.com/ControlledChaos/beeline-theme"
 msgstr ""
 
 #. Description of the plugin/theme

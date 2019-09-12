@@ -3,11 +3,11 @@
  * Theme info page
  *
  * @package    WordPress/ClassicPress
- * @subpackage BS_Theme
+ * @subpackage Beeline_Theme
  * @since      1.0.0
  */
 
-namespace BS_Theme\Includes;
+namespace Beeline_Theme\Includes;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -30,7 +30,7 @@ $get_theme_tags   = $get_theme->get( 'Tags' );
 $screenshot_src   = $get_theme->get_screenshot();
 
 // Text if data is not provided by the theme.
-$not_provided = __( 'Not provided in the stylesheet header', 'bs-theme' );
+$not_provided = __( 'Not provided in the stylesheet header', 'beeline-theme' );
 
 // Theme description.
 if ( $get_theme_desc ) {
@@ -85,23 +85,23 @@ if ( $get_theme_tags ) {
 ?>
 
 <div class="wrap theme-info-page">
-	<h1><?php _e( 'Active Theme Information', 'bs-theme' ); ?></h1>
+	<h1><?php _e( 'Active Theme Information', 'beeline-theme' ); ?></h1>
 	<p class="description"><?php echo apply_filters( 'igp_theme_page_description', $get_theme_desc ); ?></p>
 	<hr />
 	<main>
-		<h2><?php echo apply_filters( 'igp_theme_page_details_title', esc_html__( 'Theme Details', 'bs-theme' ) ); ?></h2>
+		<h2><?php echo apply_filters( 'igp_theme_page_details_title', esc_html__( 'Theme Details', 'beeline-theme' ) ); ?></h2>
 		<ul>
-			<li><strong><?php esc_html_e( 'Theme Name: ', 'bs-theme' ); ?></strong><?php echo $get_theme_name; ?></li>
+			<li><strong><?php esc_html_e( 'Theme Name: ', 'beeline-theme' ); ?></strong><?php echo $get_theme_name; ?></li>
 			<?php if ( $get_template ) : ?>
-				<li><strong><?php _e( 'Template: ', 'bs-theme' ); ?></strong><?php echo $parent_name; ?></li>
+				<li><strong><?php _e( 'Template: ', 'beeline-theme' ); ?></strong><?php echo $parent_name; ?></li>
 			<?php endif; ?>
-			<li><strong><?php esc_html_e( 'Theme URI: ', 'bs-theme' ); ?></strong><?php echo $theme_uri; ?></li>
-			<li><strong><?php esc_html_e( 'Author: ', 'bs-theme' ); ?></strong><?php echo $author; ?></li>
-			<li><strong><?php esc_html_e( 'Author URI: ', 'bs-theme' ); ?></strong><?php echo $author_uri; ?></li>
-			<li><strong><?php esc_html_e( 'Description: ', 'bs-theme' ); ?></strong><?php echo $description; ?></li>
-			<li><strong><?php esc_html_e( 'Version: ', 'bs-theme' ); ?></strong><?php echo $version; ?></li>
-			<li><strong><?php esc_html_e( 'Text Domain: ', 'bs-theme' ); ?></strong><?php echo $domain; ?></li>
-			<li><strong><?php esc_html_e( 'Tags: ', 'bs-theme' ); ?></strong><?php echo implode( ', ', $tags ); ?></li>
+			<li><strong><?php esc_html_e( 'Theme URI: ', 'beeline-theme' ); ?></strong><?php echo $theme_uri; ?></li>
+			<li><strong><?php esc_html_e( 'Author: ', 'beeline-theme' ); ?></strong><?php echo $author; ?></li>
+			<li><strong><?php esc_html_e( 'Author URI: ', 'beeline-theme' ); ?></strong><?php echo $author_uri; ?></li>
+			<li><strong><?php esc_html_e( 'Description: ', 'beeline-theme' ); ?></strong><?php echo $description; ?></li>
+			<li><strong><?php esc_html_e( 'Version: ', 'beeline-theme' ); ?></strong><?php echo $version; ?></li>
+			<li><strong><?php esc_html_e( 'Text Domain: ', 'beeline-theme' ); ?></strong><?php echo $domain; ?></li>
+			<li><strong><?php esc_html_e( 'Tags: ', 'beeline-theme' ); ?></strong><?php echo implode( ', ', $tags ); ?></li>
 		</ul>
 		<?php if ( $screenshot_src ) : ?>
 			<a href="<?php echo $get_theme_uri; ?>" target="_blank" rel="nofollow"><img src="<?php echo esc_url( $screenshot_src ); ?>" style="max-width: 640px;" /></a>

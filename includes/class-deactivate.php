@@ -5,7 +5,7 @@
  * Do not namespace this file.
  *
  * @package    WordPress/ClassicPress
- * @subpackage BS_Theme
+ * @subpackage Beeline_Theme
  * @since      1.0.0
  */
 
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since  1.0.0
  * @access public
  */
-class BS_Theme_Deactivate {
+class Beeline_Theme_Deactivate {
 
     /**
 	 * Constructor magic method
@@ -52,4 +52,4 @@ class BS_Theme_Deactivate {
 }
 
 // Run the class.
-new BS_Theme_Deactivate;
+new Beeline_Theme_Deactivate;

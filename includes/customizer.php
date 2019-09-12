@@ -3,7 +3,7 @@
  * Theme Customizer
  *
  * @package    WordPress/ClassicPress
- * @subpackage BS_Theme
+ * @subpackage Beeline_Theme
  * @since      1.0.0
  */
 
