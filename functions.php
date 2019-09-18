@@ -467,9 +467,9 @@ final class Functions {
 	 */
 	public function frontend_scripts() {
 
-		// wp_enqueue_script( 'jquery' );
+		wp_enqueue_script( 'jquery' );
 
-		wp_enqueue_script( 'test-navigation', get_theme_file_uri( '/assets/js/navigation.min.js' ), [], null, true );
+		wp_enqueue_script( 'beeline-navigation', get_theme_file_uri( '/assets/js/navigation.min.js' ), [], null, true );
 
 		wp_enqueue_script( 'beeline-theme-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.min.js' ), [], null, true );
 
@@ -499,7 +499,10 @@ final class Functions {
 	public function frontend_styles() {
 
 		// Google fonts.
-		// wp_enqueue_style( 'beeline-theme-google-fonts', 'add-url-here', [], '', 'screen' );
+		// wp_enqueue_style( 'beeline-google-fonts', 'add-url-here', [], '', 'screen' );
+
+		// Adobe fonts.
+		wp_enqueue_style( 'beeline-adobe-fonts', 'https://use.typekit.net/jyo4had.css', [], '', 'screen' );
 
 		/**
 		 * Theme sylesheet
@@ -508,7 +511,7 @@ final class Functions {
 		 * The main stylesheet, in the root directory, only contains the theme header but
 		 * it is necessary for theme activation. DO NOT delete the main stylesheet!
 		 */
-		wp_enqueue_style( 'beeline-theme', get_theme_file_uri( '/assets/css/style.min.css' ), [], '' );
+		wp_enqueue_style( 'beeline', get_theme_file_uri( '/assets/css/style.min.css' ), [], '' );
 
 		// Print styles.
 		wp_enqueue_style( 'bs-print', get_theme_file_uri( '/assets/css/print.min.css' ), [], '', 'print' );
@@ -524,7 +527,13 @@ final class Functions {
 	 */
 	public function admin_styles() {
 
-		wp_enqueue_style( 'beeline-theme-admin', get_theme_file_uri( '/assets/css/admin.min.css' ), [], '' );
+		// Google fonts.
+		// wp_enqueue_style( 'beeline-google-fonts', 'add-url-here', [], '', 'screen' );
+
+		// Adobe fonts.
+		wp_enqueue_style( 'beeline-adobe-fonts', 'https://use.typekit.net/jyo4had.css', [], '', 'screen' );
+
+		wp_enqueue_style( 'beeline-admin', get_theme_file_uri( '/assets/css/admin.min.css' ), [], '' );
 
 	}
 
@@ -537,7 +546,13 @@ final class Functions {
 	 */
 	public function login_styles() {
 
-		wp_enqueue_style( 'custom-login', get_theme_file_uri( '/assets/css/login.css' ), [], '', 'screen' );
+		// Google fonts.
+		// wp_enqueue_style( 'beeline-google-fonts', 'add-url-here', [], '', 'screen' );
+
+		// Adobe fonts.
+		wp_enqueue_style( 'beeline-adobe-fonts', 'https://use.typekit.net/jyo4had.css', [], '', 'screen' );
+
+		wp_enqueue_style( 'beeline-login', get_theme_file_uri( '/assets/css/login.css' ), [], '', 'screen' );
 
 	}
 
@@ -697,7 +712,7 @@ final class Functions {
      */
     public function theme_info_output() {
 
-        require get_parent_theme_file_path( '/includes/theme-info-page.php' );
+        require get_theme_file_path( '/includes/theme-info-page.php' );
 
 	}
 
