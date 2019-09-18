@@ -407,7 +407,7 @@ ul {
 .site {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2em;
+  padding: 0 2em;
 }
 
 main article {
@@ -731,6 +731,7 @@ h2 + .search-form {
   }
   .main-navigation ul {
     display: block;
+    text-align: right;
   }
   .main-navigation div > ul > li {
     display: inline;
