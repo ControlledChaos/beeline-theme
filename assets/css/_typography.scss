@@ -3,7 +3,9 @@
  */
 body {
 	background: #fff;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+	font-family: proxima-nova, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+	font-weight: normal;
+	font-weight: 300;
 	line-height: 1.5;
 	color: $text;
 }
@@ -26,8 +28,36 @@ ol {
 	margin-top: 1em;
 }
 
+h1,
+h2,
+h3 {
+	font-family: benton-sans-wide, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+}
+
+h1,
+h2 {
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	font-weight: normal;
+	font-weight: 500;
+}
+
+h3,
+h4 {
+	font-weight: normal;
+	font-weight: 400;
+}
+
 a {
 	color: $link;
+	text-decoration: none;
+	font-weight: normal;
+	font-weight: 400;
+}
+
+a:hover,
+a:focus {
+	color: $light_gray;
 }
 
 a:visited {
@@ -39,6 +69,10 @@ a:visited {
 .entry-content ol,
 .sidebar-widgets ol {
 	padding-left: 1em;
+}
+
+ul {
+	list-style: none;
 }
 
 /* Text meant only for screen readers. */
