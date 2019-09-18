@@ -74,7 +74,7 @@ if ( is_home() && ! is_front_page() ) {
 			$site_description = get_bloginfo( 'description', 'display' );
 			if ( $site_description || is_customize_preview() ) :
 				?>
-				<p class="site-description"><?php echo $site_description; ?></p>
+				<p class="site-description screen-reader-text"><?php echo $site_description; ?></p>
 			<?php endif; ?>
 		</div>
 	</header>

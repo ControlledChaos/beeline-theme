@@ -17,13 +17,6 @@
 	<?php Beeline_Theme\Tags\post_thumbnail(); ?>
 
 	<div class="entry-content" itemprop="articleBody">
-		<?php
-		the_content();
-
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'beeline-theme' ),
-			'after'  => '</div>',
-		) );
-		?>
+		<?php the_content(); ?>
 	</div>
 </article>
