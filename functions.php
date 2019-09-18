@@ -190,9 +190,6 @@ final class Functions {
 		// Browser title tag support.
 		add_theme_support( 'title-tag' );
 
-		// Background color & image support.
-		add_theme_support( 'custom-background' );
-
 		// RSS feed links support.
 		add_theme_support( 'automatic-feed-links' );
 
@@ -289,45 +286,6 @@ final class Functions {
 		add_image_size( __( 'banner-md', 'beeline-theme' ), 960, 411, true );
 		add_image_size( __( 'banner-sm', 'beeline-theme' ), 640, 274, true );
 
-		/**
-		 * Custom header for the front page.
-		 */
-		add_theme_support( 'custom-header', apply_filters( 'bst_custom_header_args', [
-			'width'              => 2048,
-			'height'             => 878,
-			'flex-height'        => true,
-			'video'              => false,
-			'wp-head-callback'   => [ $this, 'header_style' ]
-		] ) );
-
-		register_default_headers( [
-			'default-image' => [
-				'url'           => '%s/assets/images/default-header.jpg',
-				'thumbnail_url' => '%s/assets/images/default-header.jpg',
-				'description'   => __( 'Default Header Image', 'beeline-theme' ),
-			],
-		] );
-
-		/**
-		 * Custom logo support
-		 *
-		 * @since 1.0.0
-		 */
-
-		// Logo arguments.
-		$logo_args = [
-			'width'       => 180,
-			'height'      => 180,
-			'flex-width'  => true,
-			'flex-height' => true
-		];
-
-		// Apply a filter to logo arguments.
-		$logo = apply_filters( 'bst_header_image', $logo_args );
-
-		// Add logo support.
-		add_theme_support( 'custom-logo', $logo );
-
 		 /**
 		 * Set content width.
 		 *
@@ -347,7 +305,7 @@ final class Functions {
 		register_nav_menus( [
 			'main'   => __( 'Main Menu', 'beeline-theme' ),
 			'footer' => __( 'Footer Menu', 'beeline-theme' ),
-			'social' => __( 'Social Menu', 'beeline-theme' )
+			// 'social' => __( 'Social Menu', 'beeline-theme' )
 		] );
 
 		/**

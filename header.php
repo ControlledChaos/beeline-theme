@@ -66,7 +66,6 @@ if ( is_home() && ! is_front_page() ) {
 	<header id="masthead" class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
 		<div class="site-branding">
 			<?php
-			the_custom_logo();
 			if ( is_front_page() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php else : ?>
@@ -77,21 +76,6 @@ if ( is_home() && ! is_front_page() ) {
 				?>
 				<p class="site-description"><?php echo $site_description; ?></p>
 			<?php endif; ?>
-			<div class="site-header-image" role="presentation">
-				<figure>
-					<?php
-					if ( has_header_image() ) {
-						the_header_image_tag();
-					} else {
-						echo sprintf(
-							'<img src="%1s" alt="%2s" width="2048" height="878" />',
-							get_theme_file_uri( '/assets/images/default-header.jpg' ),
-							get_bloginfo( 'name' ) . __( 'header image', 'beeline-theme' )
-						);
-					} ?>
-				</figure>
-			</div>
 		</div>
 	</header>
-
 	<div id="content" class="site-content">
