@@ -4,7 +4,10 @@
 .site-title {
 	/* Match <p> tag to <h1> tag on front page */
 	font-size: 2em;
-	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	font-weight: normal;
+	font-weight: 300;
 
 	& a {
 		text-decoration: none;
