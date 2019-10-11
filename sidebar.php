@@ -8,7 +8,7 @@
  */
 
 ?>
-<aside id="secondary" class="widget-area">
+<aside id="secondary" class="widget-area" role="complementary">
 	<?php
 		if ( is_active_sidebar( 'sidebar' ) ) {
 			dynamic_sidebar( 'sidebar' );

@@ -49,33 +49,35 @@ if ( is_home() && ! is_front_page() ) {
 <?php Beeline_Theme\Tags\before_page(); ?>
 <div id="page" class="site" itemscope="itemscope" itemtype="<?php Beeline_Theme\Tags\site_schema(); ?>">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'beeline-theme' ); ?></a>
-
-	<nav id="site-navigation" class="main-navigation" role="directory" itemscope itemtype="http://schema.org/SiteNavigationElement">
-		<button class="menu-toggle" aria-controls="main-menu" aria-expanded="false">
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="theme-icon menu-icon"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg>
-			<?php esc_html_e( 'Menu', 'beeline-theme' ); ?>
-		</button>
-		<?php
-		wp_nav_menu( array(
-			'theme_location' => 'main',
-			'menu_id'        => 'main-menu',
-		) );
-		?>
-	</nav>
-
-	<header id="masthead" class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
-		<div class="site-branding">
+	<div class="content-wrapper header-nav-wrapper">
+		<nav id="site-navigation" class="main-navigation" role="directory" itemscope itemtype="http://schema.org/SiteNavigationElement">
+			<button class="menu-toggle" aria-controls="main-menu" aria-expanded="false">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="theme-icon menu-icon"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg>
+				<?php esc_html_e( 'Menu', 'beeline-theme' ); ?>
+			</button>
 			<?php
-			if ( is_front_page() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php endif;
-			$site_description = get_bloginfo( 'description', 'display' );
-			if ( $site_description || is_customize_preview() ) :
-				?>
-				<p class="site-description screen-reader-text"><?php echo $site_description; ?></p>
-			<?php endif; ?>
-		</div>
-	</header>
+			wp_nav_menu( array(
+				'theme_location' => 'main',
+				'menu_id'        => 'main-menu',
+			) );
+			?>
+		</nav>
+
+		<header id="masthead" class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
+			<div class="site-branding">
+				<?php
+				if ( is_front_page() ) : ?>
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php else : ?>
+					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+					<?php endif;
+				$site_description = get_bloginfo( 'description', 'display' );
+				if ( $site_description || is_customize_preview() ) :
+					?>
+					<p class="site-description screen-reader-text"><?php echo $site_description; ?></p>
+				<?php endif; ?>
+			</div>
+		</header>
+		<div class="site-logo"><?php echo file_get_contents( get_theme_file_path( '/assets/images/bee.svg' ) ); ?></div>
+	</div>
 	<div id="content" class="site-content">

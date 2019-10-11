@@ -1,6 +1,37 @@
 /**
  * Header
  */
+.header-nav-wrapper {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: reverse;
+	   -moz-box-orient: horizontal;
+	   -moz-box-direction: reverse;
+	    -ms-flex-direction: row-reverse;
+	        flex-direction: row-reverse;
+	-webkit-box-pack: justify;
+	   -moz-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+}
+
+.site-logo {
+	position: relative;
+	height: 24px;
+
+	svg {
+		display: inline-block;
+		max-width: 24px;
+		position: absolute;
+		top: 0;
+		right: 2em;
+		fill: #222;
+	}
+}
+
 .site-title {
 	/* Match <p> tag to <h1> tag on front page */
 	font-size: 2em;
@@ -21,4 +52,50 @@
 .site-header-image {
 	margin: 1em 0;
 	font-size: 0px;
+}
+
+// Intro images.
+.intro-image {
+	margin: 2rem auto 0;
+	background: #222;
+	color: #fff;
+	margin-left: calc( -100vw / 2 + 100% / 2 );
+	margin-right: calc( -100vw / 2 + 100% / 2 );
+	max-width: 100vw;
+
+	figure {
+		width: 100%;
+		position: relative;
+		overflow: hidden;
+		margin: 0;
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+			min-height: 600px;
+			-o-object-fit: cover;
+			   object-fit: cover;
+		}
+
+		.hero-header {
+			margin: 0 auto;
+			max-width: 720px;
+		}
+
+		h1,
+		h2 {
+			font-size: $px37;
+			line-height: 1.2;
+			letter-spacing: 0.03em;
+			color: $white;
+			text-shadow: 0.05em 0.05em 0.05em rgba(0,0,0,0.7);
+		}
+
+		p {
+			font-size: $px19;
+			font-weight: 600;
+			text-shadow: 0.05em 0.05em 0.05em rgba(0,0,0,0.7);
+		}
+	}
 }

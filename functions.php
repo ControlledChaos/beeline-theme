@@ -119,6 +119,9 @@ final class Functions {
 		// Frontend scripts.
 		add_action( 'wp_enqueue_scripts', [ $this, 'frontend_scripts' ] );
 
+		// Frontend footer scripts.
+		add_action( 'wp_footer', [ $this, 'frontend_footer_scripts' ], 20 );
+
 		// Admin scripts.
 		add_action( 'admin_enqueue_scripts', [ $this, 'admin_scripts' ] );
 
@@ -212,43 +215,43 @@ final class Functions {
 		$color_args = [
 			[
 				'name'  => __( 'Text', 'beeline-theme' ),
-				'slug'  => 'bst-text',
+				'slug'  => 'beeline-text',
 				'color' => '#333333',
 			],
 			[
 				'name'  => __( 'Light Gray', 'beeline-theme' ),
-				'slug'  => 'bst-light-gray',
+				'slug'  => 'beeline-light-gray',
 				'color' => '#888888',
 			],
 			[
 				'name'  => __( 'Pale Gray', 'beeline-theme' ),
-				'slug'  => 'bst-pale-gray',
+				'slug'  => 'beeline-pale-gray',
 				'color' => '#cccccc',
 			],
 			[
 				'name'  => __( 'White', 'beeline-theme' ),
-				'slug'  => 'bst-white',
+				'slug'  => 'beeline-white',
 				'color' => '#ffffff',
 			],
 			[
 				'name'  => __( 'Error Red', 'beeline-theme' ),
-				'slug'  => 'bst-error',
+				'slug'  => 'beeline-error',
 				'color' => '#dc3232',
 			],
 			[
 				'name'  => __( 'Warning Yellow', 'beeline-theme' ),
-				'slug'  => 'bst-warning',
+				'slug'  => 'beeline-warning',
 				'color' => '#ffb900',
 			],
 			[
 				'name'  => __( 'Success Green', 'beeline-theme' ),
-				'slug'  => 'bst-success',
+				'slug'  => 'beeline-success',
 				'color' => '#46b450',
 			]
 		];
 
 		// Apply a filter to editor arguments.
-		$colors = apply_filters( 'bst_editor_colors', $color_args );
+		$colors = apply_filters( 'beeline_editor_colors', $color_args );
 
 		// Add color support.
 		add_theme_support( 'editor-color-palette', $colors );
@@ -276,22 +279,20 @@ final class Functions {
 		 * @since 1.0.0
 		 */
 
-		// 16:9 HD Video.
-		add_image_size( __( 'video', 'beeline-theme' ), 1280, 720, true );
-		add_image_size( __( 'video-md', 'beeline-theme' ), 960, 540, true );
-		add_image_size( __( 'video-sm', 'beeline-theme' ), 640, 360, true );
+		// 4:3 Standard monitor background slides.
+		add_image_size( 'slide-small', 640, 360, true );
+		add_image_size( 'slide-medium', 1024, 576, true );
+		add_image_size( 'slide-large', 2048, 1152, true );
 
-		// 21:9 Cinemascope.
-		add_image_size( __( 'banner', 'beeline-theme' ), 1280, 549, true );
-		add_image_size( __( 'banner-md', 'beeline-theme' ), 960, 411, true );
-		add_image_size( __( 'banner-sm', 'beeline-theme' ), 640, 274, true );
+		// Roster preview grid.
+		add_image_size( __( 'roster-preview', 'beeline-theme' ), 80, 80, true );
 
 		 /**
 		 * Set content width.
 		 *
 		 * @since 1.0.0
 		 */
-		$bs_content_width = apply_filters( 'bst_content_width', 1280 );
+		$bs_content_width = apply_filters( 'beeline_content_width', 1280 );
 
 		if ( ! isset( $content_width ) ) {
 			$content_width = $bs_content_width;
@@ -304,7 +305,7 @@ final class Functions {
 		 */
 		register_nav_menus( [
 			'main'   => __( 'Main Menu', 'beeline-theme' ),
-			'footer' => __( 'Footer Menu', 'beeline-theme' ),
+			// 'footer' => __( 'Footer Menu', 'beeline-theme' ),
 			// 'social' => __( 'Social Menu', 'beeline-theme' )
 		] );
 
@@ -313,7 +314,7 @@ final class Functions {
 		 *
 		 * @since 1.0.0
 		 */
-		add_editor_style( '/assets/css/editor.min.css', [ 'bst-admin' ], '', 'screen' );
+		add_editor_style( '/assets/css/editor.min.css', [ 'beeline-admin' ], '', 'screen' );
 
 	}
 
@@ -395,7 +396,7 @@ final class Functions {
 		$disable = add_theme_support( 'disable-custom-colors', [] );
 
 		// Apply a filter for conditionally disabling the picker.
-		$custom_colors = apply_filters( 'bst_editor_custom_colors', '__return_false' );
+		$custom_colors = apply_filters( 'beeline_editor_custom_colors', '__return_false' );
 
 		return $custom_colors;
 
@@ -434,6 +435,38 @@ final class Functions {
 		// Comments scripts.
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
+		}
+
+	}
+
+	/**
+	 * Frontend footer scripts
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return string
+	 */
+	public function frontend_footer_scripts() {
+
+		if ( is_front_page() ) {
+			echo '
+			<script>
+			jQuery(".intro-slides").slick({
+				autoplay: true,
+				autoplaySpeed: 4500,
+				slidesToShow: 1,
+				arrows: false,
+				dots: false,
+				infinite: true,
+				speed: 800,
+				adaptiveHeight: false,
+				variableWidth: false,
+				mobileFirst: true,
+				draggable: false,
+				fade: true,
+				pauseOnHover: false
+			});
+			</script>';
 		}
 
 	}
