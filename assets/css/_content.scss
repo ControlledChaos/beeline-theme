@@ -5,19 +5,23 @@
 	display: block;
 }
 
-.post,
-.page {
-	margin: 0 0 1.5em;
-}
-
 .updated:not(.published) {
 	display: none;
+}
+
+.content-area {
+	padding: 0 2em;
 }
 
 .page-content,
 .entry-content,
 .entry-summary {
 	margin: 1.5em 0 0;
+
+	h1,
+	h2 {
+		text-align: center;
+	}
 }
 
 .page-links {
@@ -32,4 +36,56 @@
 
 .entry-footer span {
 	margin-right: 1em;
+}
+
+// Front page.
+.roster-front,
+.additional-content-front {
+	padding: 0 2em;
+}
+
+.roster-front {
+	margin-top: 3em;
+
+	h1,
+	h2 {
+		text-align: center;
+	}
+}
+
+// Contact page.
+.profile-grid {
+	margin: 2em 0;
+}
+
+.contact-name {
+	font-family: $display_font;
+	font-weight: 600;
+	font-variant: small-caps;
+}
+
+.additional-content-front {
+	margin-top: 2em;
+	padding-top: 1em;
+	border-top: solid 1px $pale_gray;
+
+	h1,
+	h2 {
+		text-align: center;
+	}
+}
+
+@media screen and (min-width: 37.5em) {
+
+	.page-content,
+	.entry-content,
+	.entry-summary,
+	.roster-front,
+	.additional-content-front {
+
+		h1,
+		h2 {
+			text-align: left;
+		}
+	}
 }

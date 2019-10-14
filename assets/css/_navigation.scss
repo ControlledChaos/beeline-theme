@@ -9,14 +9,14 @@
 	margin-top: 1em;
 	background: #fff;
 
-	& ul {
+	ul {
 		display: none;
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
 		background: inherit;
 
-		& ul {
+		ul {
 			-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 			        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 			position: absolute;
@@ -25,13 +25,13 @@
 			z-index: 99999;
 			background: inherit;
 
-			& ul {
+			ul {
 				left: -999em;
 				top: 0;
 			}
 
-			& li:hover > ul,
-			& li.focus > ul {
+			li:hover > ul,
+			li.focus > ul {
 				left: 100%;
 			}
 
@@ -40,19 +40,29 @@
 			}
 		}
 
-		& li:hover > ul,
-		& li.focus > ul {
+		li:hover > ul,
+		li.focus > ul {
 			left: auto;
 		}
 	}
 
-	& li {
+	li {
 		position: relative;
+		font-family: $display_font;
+		font-size: $px15;
+		font-weight: 500;
+		text-transform: uppercase;
 	}
 
-	& a {
+	a {
 		display: inline-block;
 		text-decoration: none;
+		transform: all .15s;
+
+		&:hover,
+		&:focus {
+			color: $yellow;
+		}
 	}
 }
 
@@ -76,7 +86,10 @@
 	.main-navigation div > ul > li {
 		display: inline;
 		position: relative;
-		margin-right: 1em;
+
+		&:not(:last-of-type) {
+			margin-right: 1em;
+		}
 	}
 }
 

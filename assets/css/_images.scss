@@ -7,18 +7,12 @@
 
 img,
 figure {
+	display: block;
 
-	&.alignright {
-		margin: 1em 0 0 1em;
-	}
-
-	&.alignleft {
-		margin: 1em 1em 0 0;
-	}
-
+	&.alignleft,
+	&.alignright,
 	&.aligncenter {
-		display: block;
-		margin: 1em auto;
+		margin: 2em auto;
 	}
 
 	&.alignfull {
@@ -47,14 +41,6 @@ figure {
 	height: auto;
 }
 
-.alignleft {
-	float: left;
-}
-
-.alignright {
-	float: right;
-}
-
 .aligncenter {
 	display: block;
 	margin: 1em auto;
@@ -66,15 +52,10 @@ figure {
 }
 
 .entry-content p img {
+	display: block;
 
-	&.alignleft {
-		margin: 0 1em 1em 0;
-	}
-
-	&.alignright {
-		margin: 0 0 1em 1em;
-	}
-
+	&.alignleft,
+	&.alignright,
 	&.aligncenter {
 		margin: 2em auto;
 	}
@@ -125,4 +106,34 @@ figure {
 	vertical-align: middle;
 	max-width: 48px;
 	margin-right: 0.5em;
+}
+
+@media screen and (min-width: 37.5em) {
+
+	.alignleft {
+		float: left;
+	}
+
+	.alignright {
+		float: right;
+	}
+
+	.aligncenter {
+		margin: 1em auto;
+	}
+
+	.entry-content p img {
+
+		&.alignleft {
+			margin: 0 1em 1em 0;
+		}
+
+		&.alignright {
+			margin: 0 0 1em 1em;
+		}
+
+		&.aligncenter {
+			margin: 2em auto;
+		}
+	}
 }
