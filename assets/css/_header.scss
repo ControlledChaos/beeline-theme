@@ -10,16 +10,7 @@
 	display: -moz-box;
 	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: reverse;
-	   -moz-box-orient: horizontal;
-	   -moz-box-direction: reverse;
-	    -ms-flex-direction: row-reverse;
-	        flex-direction: row-reverse;
-	-webkit-box-pack: justify;
-	   -moz-box-pack: justify;
-	    -ms-flex-pack: justify;
-			justify-content: space-between;
+	flex-direction: column;
 }
 
 .site-logo {
@@ -161,6 +152,30 @@
 					margin-top: 2em;
 				}
 			}
+		}
+	}
+}
+
+@media screen and (min-width: 960px) {
+
+	.header-nav-wrapper {
+		flex-direction: row-reverse;
+		justify-content: space-between;
+		padding: 0;
+	}
+
+	.site-logo {
+		position: relative;
+		height: 24px;
+
+		svg {
+			right: 0;
+		}
+
+		&:before,
+		&:after {
+			left: 0;
+			right: 32px;
 		}
 	}
 }

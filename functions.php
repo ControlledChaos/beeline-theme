@@ -90,9 +90,6 @@ final class Functions {
 		// Register widgets.
         add_action( 'widgets_init', [ $this, 'widgets' ] );
 
-		// Disable custom colors in the editor.
-		add_action( 'after_setup_theme', [ $this, 'editor_custom_color' ] );
-
 		// Remove unpopular meta tags.
 		add_action( 'init', [ $this, 'head_cleanup' ] );
 
@@ -118,17 +115,17 @@ final class Functions {
 		// Login styles.
 		add_action( 'login_enqueue_scripts', [ $this, 'login_styles' ] );
 
+		// Remove prepend text from archive titles.
+		add_filter( 'get_the_archive_title', [ $this, 'archive_title' ] );
+
 		// jQuery UI fallback for HTML5 Contact Form 7 form fields.
 		add_filter( 'wpcf7_support_html5_fallback', '__return_true' );
 
-		// Remove WooCommerce styles.
-		add_filter( 'woocommerce_enqueue_styles', '__return_false' );
-
 		// Theme options page.
-		add_action( 'admin_menu', [ $this, 'theme_options' ] );
+		// add_action( 'admin_menu', [ $this, 'theme_options' ] );
 
 		// Theme info page.
-		add_action( 'admin_menu', [ $this, 'theme_info' ] );
+		// add_action( 'admin_menu', [ $this, 'theme_info' ] );
 
 	}
 
@@ -184,59 +181,6 @@ final class Functions {
 			'gscreenery',
 			'caption'
 		 ] );
-
-		/**
-		 * Color arguments
-		 *
-		 * Match the following HEX codes with SASS color variables.
-		 *
-		 * @see assets/css/_variables.scss
-		 */
-		$color_args = [
-			[
-				'name'  => __( 'Text', 'beeline-theme' ),
-				'slug'  => 'beeline-text',
-				'color' => '#333333',
-			],
-			[
-				'name'  => __( 'Light Gray', 'beeline-theme' ),
-				'slug'  => 'beeline-light-gray',
-				'color' => '#888888',
-			],
-			[
-				'name'  => __( 'Pale Gray', 'beeline-theme' ),
-				'slug'  => 'beeline-pale-gray',
-				'color' => '#cccccc',
-			],
-			[
-				'name'  => __( 'White', 'beeline-theme' ),
-				'slug'  => 'beeline-white',
-				'color' => '#ffffff',
-			],
-			[
-				'name'  => __( 'Error Red', 'beeline-theme' ),
-				'slug'  => 'beeline-error',
-				'color' => '#dc3232',
-			],
-			[
-				'name'  => __( 'Warning Yellow', 'beeline-theme' ),
-				'slug'  => 'beeline-warning',
-				'color' => '#ffb900',
-			],
-			[
-				'name'  => __( 'Success Green', 'beeline-theme' ),
-				'slug'  => 'beeline-success',
-				'color' => '#46b450',
-			]
-		];
-
-		// Apply a filter to editor arguments.
-		$colors = apply_filters( 'beeline_editor_colors', $color_args );
-
-		// Add color support.
-		add_theme_support( 'editor-color-palette', $colors );
-
-		add_theme_support( 'align-wide' );
 
 		/**
 		 * Add theme support.
@@ -299,51 +243,6 @@ final class Functions {
 	}
 
 	/**
-	 * Style the header image and text
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return string Returns an HTML style block.
-	 *
-	 */
-	public function header_style() {
-
-		$header_text_color = get_header_textcolor();
-
-		/*
-		 * If no custom options for text are set, let's bail.
-		 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: add_theme_support( 'custom-header' ).
-		 */
-		if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
-			return;
-		}
-
-		// If we get this far, we have custom styles.
-		if ( ! display_header_text() ) {
-			$style = sprintf(
-				'<style type="text/css">%1s</style>',
-				'.site-title,
-				 .site-title a,
-				 .site-description {
-					position: absolute;
-					clip: rect(1px, 1px, 1px, 1px);
-				}'
-			);
-		} else {
-			$style = sprintf(
-				'<style type="text/css">%1s</style>',
-				'.site-title,
-				 .site-title a,
-				 .site-description {
-					color: #' . esc_attr( $header_text_color ) . ';
-				}'
-			);
-		}
-
-		echo $style;
-	}
-
-	/**
 	 * Register widgets
 	 *
 	 * @since  1.0.0
@@ -361,24 +260,6 @@ final class Functions {
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
 		] );
-
-	}
-
-	/**
-	 * Theme support for disabling custom colors in the editor
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return bool Returns true for the color picker.
-	 */
-	public function editor_custom_color() {
-
-		$disable = add_theme_support( 'disable-custom-colors', [] );
-
-		// Apply a filter for conditionally disabling the picker.
-		$custom_colors = apply_filters( 'beeline_editor_custom_colors', '__return_false' );
-
-		return $custom_colors;
 
 	}
 
@@ -524,6 +405,55 @@ final class Functions {
 		wp_enqueue_style( 'beeline-adobe-fonts', 'https://use.typekit.net/jyo4had.css', [], '', 'screen' );
 
 		wp_enqueue_style( 'beeline-login', get_theme_file_uri( '/assets/css/login.css' ), [], '', 'screen' );
+
+	}
+
+	/**
+	 * Filter archive titles
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return string Returns the filtered titles.
+	 */
+	public function archive_title( $title ) {
+
+		// Get query vars for search & filter pages.
+		$term     = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
+		$liquor   = get_query_var( 'client_types', '' );
+
+		// If a client type archive.
+		if ( is_tax( 'client_type' ) ) {
+			$title = single_term_title( '', false ) . __( ' Clients', 'beeline-theme' );
+
+		} elseif ( is_post_type_archive( 'client' ) ) {
+			$title = __( 'Beeline Clients', 'beeline-theme' );
+
+		// If is taxonomy archive.
+		} elseif ( is_tax() ) {
+			$title = single_cat_title( '', false );
+
+		// If is standard category archive.
+		} elseif ( is_category() ) {
+			$title = single_cat_title( '', false );
+
+		// If is standard tag archive.
+		} elseif ( is_tag() ) {
+			$title = single_tag_title( '', false );
+
+		} elseif ( is_post_type_archive( 'recipe' ) ) {
+            $title = __( 'Explore Recipes', 'mixes-theme' );
+
+		// If is author archive.
+		} elseif ( is_author() ) {
+			$title = sprintf(
+				'%1s <span class="vcard">%2s</span>',
+				__( 'Posts by', 'mixes-theme' ),
+				get_the_author()
+			);
+		}
+
+		// Return the ammended title.
+    	return $title;
 
 	}
 

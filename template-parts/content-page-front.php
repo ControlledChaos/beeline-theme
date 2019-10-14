@@ -54,14 +54,62 @@ if ( class_exists( 'acf_pro' ) ) :
 	// Roster section.
 	if ( get_field( 'roster_front_heading' ) && get_field( 'roster_front_content' ) ) : ?>
 	<div class="roster-front">
-		<h2><?php the_field( 'roster_front_heading' ); ?></h2>
-		<?php the_field( 'roster_front_content' ); ?>
-		<?php
-		// Loop client post type for thumbnail display.
-		?>
+		<div class="roster-front-wrap">
+			<div>
+				<h2><?php the_field( 'roster_front_heading' ); ?></h2>
+				<?php the_field( 'roster_front_content' ); ?>
+				<p class="roster-links">
+					<a class="button call-to-action" href="<?php echo site_url( 'client-type/' ) . 'production'; ?>"><?php _e( 'Production' ); ?></a>
+					<a class="button call-to-action" href="<?php echo site_url( 'client-type/' ) . 'post-production'; ?>"><?php _e( 'Post Production' ); ?></a>
+				</p>
+			</div>
+			<div>
+				<?php
+				// Query clients for grid.
+				$args = [
+					'post_type'      => [ 'client' ],
+					'orderby'        => 'rand',
+					'nopaging'       => true,
+					'posts_per_page' => '9'
+				];
+				$query = new WP_Query( $args );
+
+				if ( $query->have_posts() ) : ?>
+				<script>
+					jQuery(document).ready(function($) {
+						$('.tooltip').tooltipster({
+							theme : 'beeline-tooltip'
+						});
+					});
+				</script>
+				<ul class="roster-preview-grid">
+					<?php while ( $query->have_posts() ) : $query->the_post();
+					$image  = get_field( 'client_featured_image' );
+					$size   = 'thumbnail';
+					$src    = $image['sizes'][ $size ];
+					$width  = $image['sizes'][ $size . '-width' ];
+					$height = $image['sizes'][ $size . '-height' ]; ?>
+					<li class="tooltip" title="<?php the_title(); ?>">
+						<figure>
+							<img src="<?php echo esc_url( $src ); ?>" />
+							<figcaption class="screen-reader-text"><?php the_title(); ?></figcaption>
+						</figure>
+					</li>
+					<?php endwhile; wp_reset_postdata(); ?>
+				</ul>
+				<?php endif; ?>
+			</div>
+		</div>
 	</div>
 	<?php endif; ?>
 
+	<?php
+	// Contact section.
+	if ( get_field( 'add_contact_front' ) ) : ?>
+	<div class="contact-front">
+		
+	</div>
+	<?php endif; ?>
 	<?php
 	// Roster section.
 	if ( get_field( 'additional_content_front' ) ) : ?>

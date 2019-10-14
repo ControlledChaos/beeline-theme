@@ -13,7 +13,6 @@ get_header(); ?>
 		<main id="main" class="site-main" itemscope itemprop="mainContentOfPage">
 
 		<?php if ( have_posts() ) :
-
 			if ( is_home() && ! is_front_page() ) :
 				?>
 				<header>
@@ -24,17 +23,11 @@ get_header(); ?>
 
 			while ( have_posts() ) :
 				the_post();
-
-				get_template_part( 'template-parts/content', get_post_type() );
-
+				get_template_part( 'template-parts/content', 'archive' );
 			endwhile;
-
 			the_posts_navigation();
-
 		else :
-
 			get_template_part( 'template-parts/content', 'none' );
-
 		endif; ?>
 
 		</main>

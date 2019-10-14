@@ -13,6 +13,12 @@
 	padding: 0 2em;
 }
 
+.archive .page-title {
+	font-size: $px21;
+	text-transform: none;
+	font-variant: small-caps;
+}
+
 .page-content,
 .entry-content,
 .entry-summary {
@@ -40,6 +46,7 @@
 
 // Front page.
 .roster-front,
+.contact-front,
 .additional-content-front {
 	padding: 0 2em;
 }
@@ -47,9 +54,70 @@
 .roster-front {
 	margin-top: 3em;
 
+	.roster-front-wrap {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		.roster-preview-grid {
+			display: flex;
+			flex-wrap: wrap;
+			margin: 1em auto 0;
+			min-width: 300px;
+
+			img {
+				max-width: 100px;
+			}
+		}
+	}
+
 	h1,
 	h2 {
 		text-align: center;
+	}
+
+	.roster-links {
+		text-align: center;
+
+		a {
+			margin: 0.5em;
+		}
+	}
+}
+
+// Clients.
+.client-archive-content {
+	margin-top: 1em;
+}
+
+.client-archive-image {
+	position: relative;
+
+	figcaption {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		background: rgba(0, 0, 0, 0.5);
+		transition: background .25s;
+
+		&:hover {
+			background: rgba(0, 0, 0, 0.7);
+		}
+	}
+
+	a {
+		color: $white;
+
+		&:hover,
+		&:focus {
+			color: $white;
+		}
 	}
 }
 
@@ -75,7 +143,52 @@
 	}
 }
 
-@media screen and (min-width: 37.5em) {
+// Tooltipster.
+.tooltipster-sidetip.beeline-tooltip .tooltipster-box {
+	border: solid 2px $yellow;
+	border-radius: 0px;
+	box-shadow: none;
+}
+.tooltipster-sidetip.beeline-tooltip .tooltipster-content {
+	padding: 0.5em;
+	background: $white;
+	font-family: $display_font;
+	font-size: $px14;
+	font-weight: 600;
+	color: $text;
+}
+
+.tooltipster-sidetip.beeline-tooltip.tooltipster-bottom .tooltipster-arrow-border,
+.tooltipster-sidetip.beeline-tooltip.tooltipster-bottom .tooltipster-arrow-background {
+	border-bottom-color: $yellow;
+}
+.tooltipster-sidetip.beeline-tooltip.tooltipster-left .tooltipster-arrow-border,
+.tooltipster-sidetip.beeline-tooltip.tooltipster-left .tooltipster-arrow-background {
+	border-left-color: $yellow;
+}
+.tooltipster-sidetip.beeline-tooltip.tooltipster-right .tooltipster-arrow-border,
+.tooltipster-sidetip.beeline-tooltip.tooltipster-right .tooltipster-arrow-background {
+	border-right-color: $yellow;
+}
+.tooltipster-sidetip.beeline-tooltip.tooltipster-top .tooltipster-arrow-border,
+.tooltipster-sidetip.beeline-tooltip.tooltipster-top .tooltipster-arrow-background {
+	border-top-color: $yellow;
+}
+
+.tooltipster-sidetip.beeline-tooltip.tooltipster-bottom .tooltipster-arrow-background {
+	border-bottom-color: $white;
+}
+.tooltipster-sidetip.beeline-tooltip.tooltipster-left .tooltipster-arrow-background {
+	border-left-color: $white;
+}
+.tooltipster-sidetip.beeline-tooltip.tooltipster-right .tooltipster-arrow-background {
+	border-right-color: $white;
+}
+.tooltipster-sidetip.beeline-tooltip.tooltipster-top .tooltipster-arrow-background {
+	border-top-color: $white;
+}
+
+@media screen and (min-width: 960px) {
 
 	.page-content,
 	.entry-content,
@@ -86,6 +199,22 @@
 		h1,
 		h2 {
 			text-align: left;
+		}
+
+		.roster-links {
+			text-align: left;
+
+			a {
+				margin: 0 0.5em 0 0;
+			}
+		}
+
+		.roster-front-wrap {
+			flex-direction: row;
+
+			.roster-preview-grid {
+				margin: 1em 0 0 1em;
+			}
 		}
 	}
 }

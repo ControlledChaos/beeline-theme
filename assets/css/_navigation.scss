@@ -17,17 +17,14 @@
 		background: inherit;
 
 		ul {
-			-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			position: absolute;
-			top: 100%;
-			left: -999em;
 			z-index: 99999;
+			display: none;
 			background: inherit;
 
 			ul {
-				left: -999em;
+				right: 0;
 				top: 0;
+				display: none;
 			}
 
 			li:hover > ul,
@@ -38,18 +35,26 @@
 			& a {
 				width: 100%;
 			}
+
+			li {
+
+				a:before {
+					content: '- ';
+				}
+			}
 		}
 
 		li:hover > ul,
 		li.focus > ul {
-			left: auto;
+			display: block;
 		}
 	}
 
 	li {
 		position: relative;
+		margin: 0.5em 0;
 		font-family: $display_font;
-		font-size: $px15;
+		font-size: $px21;
 		font-weight: 500;
 		text-transform: uppercase;
 	}
@@ -64,53 +69,187 @@
 			color: $yellow;
 		}
 	}
-}
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-	font-size: 1.25em;
-}
+	.menu-toggle-wrap {
+		padding: 0 $px20 1em;
+		text-align: center;
+	}
 
-@media screen and (min-width: 37.5em) {
 	.menu-toggle {
-		display: none;
+		display: inline-block;
+		background: none;
+		border: none;
+		font-family: $display_font;
+		font-size: $px27;
+		font-weight: 500;
+		font-variant: small-caps;
+		line-height: 1;
+		color: $medium_gray;
+
+		svg {
+			display: inline-block;
+			width: 1em;
+			height: 1em;
+			vertical-align: top;
+			fill: currentColor;
+
+			&.menu-close-icon {
+				display: none;
+				width: 1.2em;
+				height: 1.2em;
+			}
+		}
 	}
 
-	.main-navigation ul {
-		display: block;
-		text-align: right;
-	}
+	&.toggled {
 
-	.main-navigation div > ul > li {
-		display: inline;
-		position: relative;
+		.menu-toggle {
 
-		&:not(:last-of-type) {
-			margin-right: 1em;
+			svg {
+
+				&.menu-close-icon {
+					display: inline-block;
+				}
+
+				&.menu-open-icon {
+					display: none;
+				}
+			}
+		}
+
+		ul {
+			display: block;
 		}
 	}
 }
 
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
+.comment-navigation,
+.posts-navigation,
 .post-navigation {
-	margin: 0 0 1.5em;
+	margin-top: 2em;
 	overflow: hidden;
+	font-size: $px19;
+	font-weight: bold;
+	font-weight: 500;
 }
 
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-	float: left;
-	width: 50%;
+.nav-links {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	   -moz-box-orient: vertical;
+	   -moz-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	   -moz-box-align: center;
+	    -ms-flex-align: center;
+			align-items: center;
+	font-family: $display_font;
+
+	.nav-previous {
+
+		.theme-icon {
+			margin-right: 0.3em;
+		}
+	}
+
+	.nav-next {
+		text-align: right;
+
+		.theme-icon {
+			margin-left: 0.3em;
+		}
+	}
+
+	svg {
+		display: inline-block;
+		vertical-align: middle;
+		width: 1em;
+		height: 1em;
+		fill: currentColor;
+	}
 }
 
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
+@media screen and (min-width: 481px) {
+
+	.nav-links {
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		   -moz-box-orient: horizontal;
+		   -moz-box-direction: normal;
+		    -ms-flex-direction: row;
+		        flex-direction: row;
+		-webkit-box-align: normal;
+		   -moz-box-align: normal;
+		    -ms-flex-align: normal;
+				align-items: normal;
+		justify-content: space-between;
+	}
+}
+
+@media screen and (min-width: 960px) {
+	.menu-toggle {
+		display: none;
+	}
+
+	.main-navigation {
+
+		ul {
+			display: block;
+			text-align: right;
+
+			ul {
+				position: absolute;
+				top: 100%;
+				right: -$px20;
+				padding: 0.5em $px20;
+				min-width: 240px;
+				background: $white;
+				border: solid 2px $yellow;
+
+				li {
+					margin-right: 0;
+
+					a:before {
+						content: '';
+					}
+
+					a {
+						width: auto;
+						padding: 0.3em 0;
+
+						&:hover,
+						&:focus {
+							color: $yellow;
+						}
+					}
+				}
+			}
+		}
+
+		li {
+			display: inline-block;
+			position: relative;
+			margin: 0 1em 0 0;
+			padding-bottom: 0.5em;
+			font-size: $px15;
+
+			a {
+				padding: 0;
+
+				&:hover,
+				&:focus {
+					color: $yellow;
+				}
+			}
+		}
+	}
+
+	.menu-toggle-wrap {
+		display: none;
+	}
 }
