@@ -64,9 +64,6 @@ final class Functions {
 
 			$instance = new self;
 
-			// Theme activation & deactivation.
-			$instance->activation();
-
 			// Theme dependencies.
 			$instance->dependencies();
 
@@ -74,23 +71,6 @@ final class Functions {
 
 		return $instance;
 	}
-
-	/**
-	 * Theme activation & deactivation functions
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return void
-	 */
-	private function activation() {
-
-		// Require theme activation functions.
-		require_once get_theme_file_path( '/includes/class-activate.php' );
-
-		// Require theme deactivation functions.
-		require_once get_theme_file_path( '/includes/class-deactivate.php' );
-
-	 }
 
 	/**
 	 * Constructor magic method
@@ -459,7 +439,7 @@ final class Functions {
 				dots: false,
 				infinite: true,
 				speed: 800,
-				adaptiveHeight: false,
+				adaptiveHeight: true,
 				variableWidth: false,
 				mobileFirst: true,
 				draggable: false,
@@ -522,7 +502,7 @@ final class Functions {
 		// wp_enqueue_style( 'beeline-google-fonts', 'add-url-here', [], '', 'screen' );
 
 		// Adobe fonts.
-		wp_enqueue_style( 'beeline-adobe-fonts', 'https://use.typekit.net/jyo4had.css', [], '', 'screen' );
+		// wp_enqueue_style( 'beeline-adobe-fonts', 'https://use.typekit.net/jyo4had.css', [], '', 'screen' );
 
 		wp_enqueue_style( 'beeline-admin', get_theme_file_uri( '/assets/css/admin.min.css' ), [], '' );
 
