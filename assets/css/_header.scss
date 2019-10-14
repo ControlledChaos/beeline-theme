@@ -48,6 +48,7 @@
 		right: 32px;
 		height: 1px;
 		background: rgba(0,0,0,0.35);
+		background: $yellow;
 	}
 }
 
@@ -130,6 +131,7 @@
 
 		.intro-content-inner {
 			margin: 0 auto;
+			width: 100%;
 			max-width: 720px;
 			text-align: center;
 
@@ -176,6 +178,19 @@
 		&:after {
 			left: 0;
 			right: 32px;
+		}
+	}
+
+	.intro-image {
+
+		.intro-content {
+
+			.intro-content-inner {
+
+				h2 {
+					font-size: $px35;
+				}
+			}
 		}
 	}
 }

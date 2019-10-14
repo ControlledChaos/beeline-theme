@@ -122,7 +122,9 @@ figure {
 		margin: 1em auto;
 	}
 
-	.entry-content img {
+	.entry-content img,
+	.entry-content p img,
+	.additional-content-front img {
 
 		&.alignleft {
 			margin: 0 1em 1em 0;

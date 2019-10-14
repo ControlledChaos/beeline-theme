@@ -714,6 +714,7 @@ h2 + .search-form {
   right: 32px;
   height: 1px;
   background: rgba(0, 0, 0, 0.35);
+  background: #ffc200;
 }
 
 .site-title {
@@ -805,6 +806,7 @@ h2 + .search-form {
 
 .intro-image .intro-content .intro-content-inner {
   margin: 0 auto;
+  width: 100%;
   max-width: 720px;
   text-align: center;
 }
@@ -850,6 +852,9 @@ h2 + .search-form {
   .site-logo:before, .site-logo:after {
     left: 0;
     right: 32px;
+  }
+  .intro-image .intro-content .intro-content-inner h2 {
+    font-size: 2.1875rem;
   }
 }
 
@@ -1465,13 +1470,19 @@ figure.alignnone {
   .aligncenter {
     margin: 1em auto;
   }
-  .entry-content img.alignleft {
+  .entry-content img.alignleft,
+  .entry-content p img.alignleft,
+  .additional-content-front img.alignleft {
     margin: 0 1em 1em 0;
   }
-  .entry-content img.alignright {
+  .entry-content img.alignright,
+  .entry-content p img.alignright,
+  .additional-content-front img.alignright {
     margin: 0 0 1em 1em;
   }
-  .entry-content img.aligncenter {
+  .entry-content img.aligncenter,
+  .entry-content p img.aligncenter,
+  .additional-content-front img.aligncenter {
     margin: 2em auto;
   }
 }
