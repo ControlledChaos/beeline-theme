@@ -60,7 +60,7 @@ if ( class_exists( 'acf_pro' ) ) :
 				<?php the_field( 'roster_front_content' ); ?>
 				<p class="roster-links">
 					<a class="button call-to-action" href="<?php echo site_url( 'client-type/' ) . 'production'; ?>"><?php _e( 'Production' ); ?></a>
-					<a class="button call-to-action" href="<?php echo site_url( 'client-type/' ) . 'post-production'; ?>"><?php _e( 'Post Production' ); ?></a>
+					<a class="button call-to-action" href="<?php echo site_url( 'client-type/' ) . 'post-music'; ?>"><?php _e( 'Post & Music' ); ?></a>
 				</p>
 			</div>
 			<div>
@@ -69,8 +69,7 @@ if ( class_exists( 'acf_pro' ) ) :
 				$args = [
 					'post_type'      => [ 'client' ],
 					'orderby'        => 'rand',
-					'nopaging'       => true,
-					'posts_per_page' => '9'
+					'posts_per_page' => 9
 				];
 				$query = new WP_Query( $args );
 

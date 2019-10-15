@@ -1128,6 +1128,91 @@ h2 + .search-form {
   margin-right: 1em;
 }
 
+.site-header-image {
+  margin: 2rem auto 0;
+  background: #222;
+  color: #fff;
+  margin-left: calc( -100vw / 2 + 100% / 2);
+  margin-right: calc( -100vw / 2 + 100% / 2);
+  max-width: 100vw;
+}
+
+.site-header-image figure {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+}
+
+.site-header-image figure img {
+  display: block;
+  width: 100%;
+  height: 30vw;
+  min-height: 350px;
+  max-height: 600px;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.site-header-image figure figcaption {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5325);
+  text-align: center;
+  color: #ffffff;
+}
+
+.site-header-image figure figcaption .hero-header {
+  margin: 0 auto;
+  max-width: 720px;
+}
+
+.site-header-image figure figcaption h1,
+.site-header-image figure figcaption h2 {
+  font-size: 2.1875rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  text-shadow: 0.05em 0.05em 0.05em rgba(0, 0, 0, 0.7);
+}
+
+.site-header-image figure figcaption p {
+  margin-top: 0.625rem;
+  font-size: 1.1875rem;
+  font-weight: 400;
+  text-shadow: 0.05em 0.05em 0.05em rgba(0, 0, 0, 0.7);
+}
+
+.site-header-image figure figcaption p:first-of-type {
+  margin-top: 2em;
+}
+
+div.site-header-image + div.entry-content {
+  margin-top: 3.25rem;
+}
+
 .roster-front,
 .contact-front,
 .additional-content-front {

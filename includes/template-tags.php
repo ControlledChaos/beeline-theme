@@ -260,8 +260,16 @@ function post_thumbnail() {
 	if ( is_singular() ) :
 		?>
 
-		<div class="post-thumbnail">
-			<?php the_post_thumbnail(); ?>
+		<div class="post-thumbnail post-thumbnail-full-width">
+			<?php
+			// Check for the slide image size.
+			if ( has_image_size( 'banner' ) ) {
+				echo get_the_post_thumbnail( '', 'banner', [ 'class' => 'alignnone' ] );
+			} elseif ( has_image_size( 'slide-large' ) ) {
+				echo get_the_post_thumbnail( '', 'slide-large', [ 'class' => 'alignnone' ] );
+			} else {
+				the_post_thumbnail();
+			} ?>
 		</div>
 
 	<?php else : ?>
