@@ -1249,7 +1249,7 @@ div.site-header-image + div.entry-content {
 
 .roster-front .roster-front-wrap .roster-preview-grid figure {
   position: relative;
-  background: #ffd300;
+  background: #ffffff;
 }
 
 .roster-front .roster-front-wrap .roster-preview-grid figure:before, .roster-front .roster-front-wrap .roster-preview-grid figure:after {
@@ -1273,6 +1273,7 @@ div.site-header-image + div.entry-content {
 .roster-front .roster-front-wrap .roster-preview-grid figure:after {
   mix-blend-mode: multiply;
   z-index: 3;
+  opacity: 0.8;
 }
 
 .roster-front .roster-front-wrap .roster-preview-grid figure img {

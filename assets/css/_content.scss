@@ -174,7 +174,7 @@ div.site-header-image + div.entry-content {
 
 			figure {
 				position: relative;
-				background: $light_yellow;
+				background: $white;
 
 				&:before,
 				&:after {
@@ -198,6 +198,7 @@ div.site-header-image + div.entry-content {
 				&:after {
 					mix-blend-mode: multiply;
 					z-index: 3;
+					opacity: 0.8;
 				}
 
 				img {
