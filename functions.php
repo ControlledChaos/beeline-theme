@@ -383,7 +383,7 @@ final class Functions {
 		// wp_enqueue_style( 'beeline-google-fonts', 'add-url-here', [], '', 'screen' );
 
 		// Adobe fonts.
-		// wp_enqueue_style( 'beeline-adobe-fonts', 'https://use.typekit.net/jyo4had.css', [], '', 'screen' );
+		wp_enqueue_style( 'beeline-adobe-fonts', 'https://use.typekit.net/jyo4had.css', [], '', 'screen' );
 
 		wp_enqueue_style( 'beeline-admin', get_theme_file_uri( '/assets/css/admin.min.css' ), [], '' );
 

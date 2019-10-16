@@ -20,7 +20,7 @@
 		$height = $image['sizes'][ $size . '-height' ]; ?>
 		<figure class="client-archive-image">
 			<a href="<?php the_field( 'client_website' ); ?>" target="_blank" rel="nofollow">
-				<img src="<?php echo esc_url( $src ); ?>" />
+				<img src="<?php echo esc_url( $src ); ?>" loading="lazy" />
 				<figcaption>
 					<header><h2><?php the_title(); ?></h2></header>
 				</figcaption>

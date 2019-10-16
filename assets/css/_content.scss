@@ -172,6 +172,10 @@ div.site-header-image + div.entry-content {
 			margin: 1em auto 0;
 			min-width: 300px;
 
+			li {
+				border: solid 1px $white;
+			}
+
 			figure {
 				position: relative;
 				background: $white;
@@ -179,7 +183,7 @@ div.site-header-image + div.entry-content {
 				&:before,
 				&:after {
 					content: '';
-					background: $light_yellow;
+					background: $yellow;
 					display: block;
 					position: absolute;
 					top: 0;
@@ -190,7 +194,6 @@ div.site-header-image + div.entry-content {
 				}
 
 				&:before {
-					background: $yellow;
 					mix-blend-mode: screen;
 					opacity: 0.1;
 				}
@@ -202,7 +205,7 @@ div.site-header-image + div.entry-content {
 				}
 
 				img {
-					max-width: 100px;
+					max-width: 98px;
 					-webkit-filter: grayscale(100%);
 							filter: grayscale(100%);
 				}
