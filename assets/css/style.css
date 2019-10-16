@@ -335,8 +335,9 @@ h2 {
 
 h3,
 h4 {
+  font-size: 1.4375rem;
   font-weight: normal;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 a,
@@ -1156,7 +1157,7 @@ h2 + .search-form {
 
 .site-header-image figure figcaption {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   position: absolute;
   top: 0;
   left: 0;
@@ -1229,11 +1230,11 @@ div.site-header-image + div.entry-content {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .roster-front .roster-front-wrap .roster-preview-grid {
@@ -1241,13 +1242,43 @@ div.site-header-image + div.entry-content {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   margin: 1em auto 0;
   min-width: 300px;
 }
 
-.roster-front .roster-front-wrap .roster-preview-grid img {
+.roster-front .roster-front-wrap .roster-preview-grid figure {
+  position: relative;
+  background: #ffd300;
+}
+
+.roster-front .roster-front-wrap .roster-preview-grid figure:before, .roster-front .roster-front-wrap .roster-preview-grid figure:after {
+  content: '';
+  background: #ffd300;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.roster-front .roster-front-wrap .roster-preview-grid figure:before {
+  background: #ffc200;
+  mix-blend-mode: screen;
+  opacity: 0.1;
+}
+
+.roster-front .roster-front-wrap .roster-preview-grid figure:after {
+  mix-blend-mode: multiply;
+  z-index: 3;
+}
+
+.roster-front .roster-front-wrap .roster-preview-grid figure img {
   max-width: 100px;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
 .roster-front h1,
@@ -1282,14 +1313,14 @@ div.site-header-image + div.entry-content {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   background: rgba(0, 0, 0, 0.5);
   -webkit-transition: background .25s;
   transition: background .25s;
@@ -1332,7 +1363,7 @@ div.site-header-image + div.entry-content {
   border: solid 2px #ffc200;
   border-radius: 0px;
   -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .tooltipster-sidetip.beeline-tooltip .tooltipster-content {
@@ -1414,8 +1445,8 @@ div.site-header-image + div.entry-content {
   .additional-content-front .roster-front-wrap {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
   }
   .page-content .roster-front-wrap .roster-preview-grid,
   .entry-content .roster-front-wrap .roster-preview-grid,

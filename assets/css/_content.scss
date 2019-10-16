@@ -70,7 +70,9 @@
 		}
 
 		figcaption {
-			box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			   -moz-box-sizing: border-box;
+			        box-sizing: border-box;
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -145,18 +147,64 @@ div.site-header-image + div.entry-content {
 	margin-top: 3em;
 
 	.roster-front-wrap {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
 		display: flex;
-		flex-direction: column;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		   -moz-box-orient: vertical;
+		   -moz-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+		-webkit-box-pack: justify;
+		   -moz-box-pack: justify;
+		    -ms-flex-pack: justify;
 		justify-content: space-between;
 
 		.roster-preview-grid {
+			display: -webkit-box;
+			display: -moz-box;
+			display: -ms-flexbox;
 			display: flex;
-			flex-wrap: wrap;
+			-ms-flex-wrap: wrap;
+			    flex-wrap: wrap;
 			margin: 1em auto 0;
 			min-width: 300px;
 
-			img {
-				max-width: 100px;
+			figure {
+				position: relative;
+				background: $light_yellow;
+
+				&:before,
+				&:after {
+					content: '';
+					background: $light_yellow;
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					pointer-events: none;
+				}
+
+				&:before {
+					background: $yellow;
+					mix-blend-mode: screen;
+					opacity: 0.1;
+				}
+
+				&:after {
+					mix-blend-mode: multiply;
+					z-index: 3;
+				}
+
+				img {
+					max-width: 100px;
+					-webkit-filter: grayscale(100%);
+							filter: grayscale(100%);
+				}
 			}
 		}
 	}
@@ -189,11 +237,26 @@ div.site-header-image + div.entry-content {
 		left: 0;
 		right: 0;
 		bottom: 0;
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
 		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		   -moz-box-orient: vertical;
+		   -moz-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+		-webkit-box-align: center;
+		   -moz-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		-webkit-box-pack: center;
+		   -moz-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
 		background: rgba(0, 0, 0, 0.5);
+		-webkit-transition: background .25s;
 		transition: background .25s;
 
 		&:hover {
@@ -237,7 +300,8 @@ div.site-header-image + div.entry-content {
 .tooltipster-sidetip.beeline-tooltip .tooltipster-box {
 	border: solid 2px $yellow;
 	border-radius: 0px;
-	box-shadow: none;
+	-webkit-box-shadow: none;
+	        box-shadow: none;
 }
 .tooltipster-sidetip.beeline-tooltip .tooltipster-content {
 	padding: 0.5em;
@@ -300,7 +364,12 @@ div.site-header-image + div.entry-content {
 		}
 
 		.roster-front-wrap {
-			flex-direction: row;
+			-webkit-box-orient: horizontal;
+			-webkit-box-direction: normal;
+			   -moz-box-orient: horizontal;
+			   -moz-box-direction: normal;
+			    -ms-flex-direction: row;
+			        flex-direction: row;
 
 			.roster-preview-grid {
 				margin: 1em 0 0 1em;
