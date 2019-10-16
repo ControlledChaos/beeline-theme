@@ -58,10 +58,17 @@ if ( class_exists( 'acf_pro' ) ) :
 			<div>
 				<h2><?php the_field( 'roster_front_heading' ); ?></h2>
 				<?php the_field( 'roster_front_content' ); ?>
+				<?php
+				// Client type taxonomy links.
+				$types = get_field( 'roster_front_links' );
+
+				if ( $types ) : ?>
 				<p class="roster-links">
-					<a class="button call-to-action" href="<?php echo site_url( 'client-type/' ) . 'production'; ?>"><?php _e( 'Production' ); ?></a>
-					<a class="button call-to-action" href="<?php echo site_url( 'client-type/' ) . 'post-music'; ?>"><?php _e( 'Post & Music' ); ?></a>
+				<?php foreach( $types as $type ) : ?>
+					<a class="button call-to-action" href="<?php echo get_term_link( $type ); ?>"><?php echo $type->name; ?></a>
+				<?php endforeach; ?>
 				</p>
+				<?php endif; ?>
 			</div>
 			<div>
 				<?php
