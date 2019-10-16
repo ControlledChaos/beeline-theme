@@ -26,6 +26,7 @@
 		fill: rgba(0,0,0,0.7);
 		stroke: $yellow;
 		stroke-width: 3;
+		overflow: visible;
 	}
 
 	&:before {
@@ -59,6 +60,7 @@
 	letter-spacing: 0.05em;
 	font-weight: normal;
 	font-weight: 400;
+	text-align: center;
 	color: $medium_gray;
 
 	a {
@@ -179,6 +181,10 @@
 			left: 0;
 			right: 32px;
 		}
+	}
+
+	.site-title {
+		text-align: left;
 	}
 
 	.intro-image {
