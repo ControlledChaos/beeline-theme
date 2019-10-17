@@ -424,7 +424,7 @@ final class Functions {
 
 		// If a client type archive.
 		if ( is_tax( 'client_type' ) ) {
-			$title = single_term_title( '', false ) . __( ' Clients', 'beeline-theme' );
+			$title = single_term_title( '', false );
 
 		} elseif ( is_post_type_archive( 'client' ) ) {
 			$title = __( 'Beeline Clients', 'beeline-theme' );
