@@ -569,3 +569,7 @@ strong {
   border: solid 1px #666666;
   color: #444444;
 }
+
+.privacy-policy-page-link {
+  display: none;
+}
