@@ -62,7 +62,8 @@
 	a {
 		display: inline-block;
 		text-decoration: none;
-		transform: all .15s;
+		-webkit-transform: all .15s;
+		        transform: all .15s;
 
 		&:hover,
 		&:focus {
@@ -187,7 +188,10 @@
 		   -moz-box-align: normal;
 		    -ms-flex-align: normal;
 				align-items: normal;
-		justify-content: space-between;
+		-webkit-box-pack: justify;
+		   -moz-box-pack: justify;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
 	}
 }
 
