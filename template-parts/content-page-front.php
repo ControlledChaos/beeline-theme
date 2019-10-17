@@ -81,13 +81,6 @@ if ( class_exists( 'acf_pro' ) ) :
 				$query = new WP_Query( $args );
 
 				if ( $query->have_posts() ) : ?>
-				<script>
-					jQuery(document).ready(function($) {
-						$('.tooltip').tooltipster({
-							theme : 'beeline-tooltip'
-						});
-					});
-				</script>
 				<ul class="roster-preview-grid">
 					<?php while ( $query->have_posts() ) : $query->the_post();
 					$image  = get_field( 'client_featured_image' );
@@ -95,9 +88,9 @@ if ( class_exists( 'acf_pro' ) ) :
 					$src    = $image['sizes'][ $size ];
 					$width  = $image['sizes'][ $size . '-width' ];
 					$height = $image['sizes'][ $size . '-height' ]; ?>
-					<li class="tooltip" title="<?php the_title(); ?>">
+					<li>
 						<figure>
-							<img src="<?php echo esc_url( $src ); ?>" />
+							<img src="<?php echo esc_url( $src ); ?>" alt="<?php the_title(); ?>" />
 							<figcaption class="screen-reader-text"><?php the_title(); ?></figcaption>
 						</figure>
 					</li>
@@ -109,13 +102,6 @@ if ( class_exists( 'acf_pro' ) ) :
 	</div>
 	<?php endif; ?>
 
-	<?php
-	// Contact section.
-	if ( get_field( 'add_contact_front' ) ) : ?>
-	<div class="contact-front">
-		
-	</div>
-	<?php endif; ?>
 	<?php
 	// Roster section.
 	if ( get_field( 'additional_content_front' ) ) : ?>
