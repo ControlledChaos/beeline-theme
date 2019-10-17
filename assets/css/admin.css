@@ -259,12 +259,18 @@ ul {
 
 body,
 .postbox .inside {
-  font-size: 1.0625rem;
+  font-size: 1rem;
+}
+
+#poststuff .stuffbox > h3,
+#poststuff h2,
+#poststuff h3.hndle {
+  text-transform: none;
+  font-weight: bold;
+  font-weight: 600;
 }
 
 #wpbody {
-  max-width: 1280px;
-  margin: 0 auto;
   padding-right: 1.25rem;
 }
 
@@ -388,31 +394,34 @@ input[type=radio]:checked:before {
 }
 
 /* Core UI */
+#major-publishing-actions {
+  background: inherit;
+}
+
 .wp-core-ui .button-link {
   color: #444;
 }
 
-.wp-core-ui .button-link:hover,
-.wp-core-ui .button-link:focus {
-  color: #ffc200;
-}
-
 .wp-core-ui .button-primary,
 .wp-core-ui .button {
+  width: auto;
   height: auto;
-  background: #888888;
-  border: none;
-  color: #ffffff;
+  padding: 0.75em 0.625em 0.5em;
+  line-height: 1;
+  cursor: pointer;
+  font-family: benton-sans-wide, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 0.875rem;
+  font-weight: bold;
+  font-weight: 600;
+  font-variant: small-caps;
+  letter-spacing: 0.065em;
+  background: inherit;
+  border: solid 2px #cccccc;
+  border-radius: 0px;
   -webkit-box-shadow: none;
           box-shadow: none;
-  font-family: benton-sans-wide, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  font-size: 0.85em;
-  font-weight: normal;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  color: #555555;
   text-shadow: none;
-  border-radius: 0px;
 }
 
 .wp-core-ui .button.insert-media {
@@ -439,26 +448,19 @@ input[type=radio]:checked:before {
   }
 }
 
+.wp-core-ui .button-link:hover,
+.wp-core-ui .button-link:focus
 .wp-core-ui .button-primary:hover,
-.wp-core-ui .button-primary:focus {
-  background: #ffc200;
-  border: none;
-  color: #ffffff;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
+.wp-core-ui .button-primary:focus,
 .wp-core-ui .button-secondary:focus,
 .wp-core-ui .button-secondary:hover,
 .wp-core-ui .button.focus,
 .wp-core-ui .button.hover,
 .wp-core-ui .button:focus,
 .wp-core-ui .button:hover {
-  background: #ffc200;
-  color: #ffffff;
-}
-
-.wp-core-ui .button-primary:focus {
+  background: inherit;
+  border-color: #ffc200;
+  color: #ffc200;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -594,6 +596,15 @@ form h2 {
   color: #666666;
 }
 
+#adminmenu > li a {
+  border: solid 2px #ffffff;
+}
+
+#adminmenu div.wp-menu-name {
+  padding: 12px 0 8px;
+  line-height: 1;
+}
+
 #adminmenu .wp-submenu-head,
 #adminmenu a.menu-top {
   font-weight: bold;
@@ -620,8 +631,9 @@ body:not(.folded) .wp-menu-image {
 #adminmenu li.menu-top:hover,
 #adminmenu li.opensub > a.menu-top,
 #adminmenu li > a.menu-top:focus {
-  color: #666666;
-  background-color: #ffd300;
+  color: #ffc200;
+  border-color: #ffc200;
+  background: inherit;
 }
 
 #adminmenu li.menu-top:hover div.wp-menu-image:before,
@@ -629,9 +641,20 @@ body:not(.folded) .wp-menu-image {
   color: #ffffff;
 }
 
-#adminmenu .wp-submenu li.current, #adminmenu .wp-submenu li.current a, #adminmenu .wp-submenu li.current a:hover, #dashboard_right_now .versions .b, #ed_reply_toolbar #ed_reply_strong, #pass-strength-result.short, #pass-strength-result.strong, #post-status-display, #post-visibility-display, .feature-filter .feature-name, .item-controls .item-order a, .media-item .percent {
+#adminmenu .wp-submenu li.current,
+#adminmenu .wp-submenu li.current a,
+#adminmenu .wp-submenu li.current a:hover,
+#dashboard_right_now .versions .b,
+#ed_reply_toolbar #ed_reply_strong,
+#pass-strength-result.short,
+#pass-strength-result.strong,
+#post-status-display,
+#post-visibility-display,
+.feature-filter .feature-name,
+.item-controls .item-order a,
+.media-item .percent {
   font-weight: normal;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .nav-tab, .plugins .name {
@@ -641,10 +664,12 @@ body:not(.folded) .wp-menu-image {
 
 #adminmenu .wp-submenu li.current a:before {
   display: inline-block;
-  vertical-align: middle;
+  height: 1em;
+  line-height: 1;
+  vertical-align: text-bottom;
   margin: 0 0 0 -0.35em;
   font-family: 'Dashicons';
-  font-size: 2em;
+  font-size: 1.5em;
   content: '\f139';
 }
 
@@ -662,11 +687,20 @@ body:not(.folded) .wp-menu-image {
 #adminmenu .wp-has-current-submenu.opensub .wp-submenu,
 .folded #adminmenu .wp-has-current-submenu .wp-submenu,
 #adminmenu a.wp-has-current-submenu:focus + .wp-submenu {
-  background: #f7f7f7;
+  background: inherit;
+}
+
+#adminmenu .wp-has-current-submenu ul > li > a,
+.folded #adminmenu li.menu-top .wp-submenu > li > a {
+  padding: 5px 0;
+}
+
+#adminmenu .wp-submenu {
+  padding: 0;
 }
 
 #adminmenu li.wp-has-submenu.wp-not-current-submenu.opensub:hover:after {
-  border-right-color: #f7f7f7;
+  border-right-color: #ffc200;
 }
 
 #adminmenu .wp-submenu .wp-submenu-head {
@@ -679,6 +713,7 @@ body:not(.folded) .wp-menu-image {
 #adminmenu a.wp-has-current-submenu:focus + .wp-submenu a,
 #adminmenu .wp-has-current-submenu.opensub .wp-submenu a {
   color: #666666;
+  border: none;
 }
 
 #adminmenu .wp-submenu a:focus, #adminmenu .wp-submenu a:hover,
@@ -701,12 +736,26 @@ body:not(.folded) .wp-menu-image {
   color: #666666;
 }
 
-#adminmenu .wp-submenu li.current a:hover, #adminmenu .wp-submenu li.current a:focus,
+#adminmenu .wp-submenu li.current a:hover,
+#adminmenu .wp-submenu li.current a:focus,
 #adminmenu a.wp-has-current-submenu:focus + .wp-submenu li.current a:hover,
 #adminmenu a.wp-has-current-submenu:focus + .wp-submenu li.current a:focus,
 #adminmenu .wp-has-current-submenu.opensub .wp-submenu li.current a:hover,
 #adminmenu .wp-has-current-submenu.opensub .wp-submenu li.current a:focus {
   color: #666666;
+}
+
+.js #adminmenu li.wp-not-current-submenu.opensub .wp-submenu,
+.js #adminmenu .sub-open,
+.no-js li.wp-has-submenu:hover .wp-submenu {
+  top: -1em;
+  border: solid 2px #ffc200;
+}
+
+.js #adminmenu li.wp-not-current-submenu.opensub .wp-submenu,
+.js #adminmenu .sub-open,
+.no-js li.wp-has-submenu:hover .wp-submenu {
+  left: calc(100% - 2px);
 }
 
 ul#adminmenu a.wp-has-current-submenu:after,
@@ -720,7 +769,8 @@ ul#adminmenu > li.current > a.current:after {
 #adminmenu li.wp-has-current-submenu .wp-submenu .wp-submenu-head,
 .folded #adminmenu li.current.menu-top {
   color: #666666;
-  background: #ffd300;
+  background: inherit;
+  border-color: #ffc200;
 }
 
 #adminmenu li.wp-has-current-submenu div.wp-menu-image:before,
@@ -797,6 +847,10 @@ ul#adminmenu > li.current > a.current:after {
 .mixes-dashboard-post-type-actions-icon .dashicons:before,
 .mixes-dashboard-content-actions-icon .dashicons:before {
   color: #666666;
+}
+
+#dashboard-widgets-wrap {
+  display: none;
 }
 
 /* Pointers */
@@ -996,8 +1050,35 @@ div#wp-responsive-toggle a:before {
   background: #888888;
 }
 
-#post-body #visibility::before, #post-body .misc-pub-post-status::before, #post-body .misc-pub-revisions::before, .curtime #timestamp::before, span.wp-media-buttons-icon::before {
-  color: #ffffff;
+#post-body #visibility:before,
+#post-body .misc-pub-post-status:before,
+#post-body .misc-pub-revisions:before,
+.curtime #timestamp:before,
+span.wp-media-buttons-icon:before {
+  color: #888888;
+}
+
+.wp-core-ui .button.focus #post-body #visibility:before,
+.wp-core-ui .button.focus #post-body .misc-pub-post-status:before,
+.wp-core-ui .button.focus #post-body .misc-pub-revisions:before,
+.wp-core-ui .button.focus .curtime #timestamp:before,
+.wp-core-ui .button.focus span.wp-media-buttons-icon:before,
+.wp-core-ui .button.hover #post-body #visibility:before,
+.wp-core-ui .button.hover #post-body .misc-pub-post-status:before,
+.wp-core-ui .button.hover #post-body .misc-pub-revisions:before,
+.wp-core-ui .button.hover .curtime #timestamp:before,
+.wp-core-ui .button.hover span.wp-media-buttons-icon:before,
+.wp-core-ui .button:focus #post-body #visibility:before,
+.wp-core-ui .button:focus #post-body .misc-pub-post-status:before,
+.wp-core-ui .button:focus #post-body .misc-pub-revisions:before,
+.wp-core-ui .button:focus .curtime #timestamp:before,
+.wp-core-ui .button:focus span.wp-media-buttons-icon:before,
+.wp-core-ui .button:hover #post-body #visibility:before,
+.wp-core-ui .button:hover #post-body .misc-pub-post-status:before,
+.wp-core-ui .button:hover #post-body .misc-pub-revisions:before,
+.wp-core-ui .button:hover .curtime #timestamp:before,
+.wp-core-ui .button:hover span.wp-media-buttons-icon:before {
+  color: #ffc200;
 }
 
 /**
