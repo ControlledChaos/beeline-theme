@@ -103,6 +103,6 @@ if ( is_home() && ! is_front_page() ) {
 				</div>
 			</header>
 		</div>
-		<div class="site-logo"><?php echo file_get_contents( get_theme_file_path( '/assets/images/bee.svg' ) ); ?></div>
+		<div class="bee-flourish"><?php echo file_get_contents( get_theme_file_path( '/assets/images/bee.svg' ) ); ?></div>
 	</div>
 	<div id="content" class="site-content">

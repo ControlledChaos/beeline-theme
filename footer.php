@@ -23,7 +23,8 @@ $copyright = sprintf(
 
 	<footer id="colophon" class="site-footer">
 		<div class="footer-content global-wrapper footer-wrapper">
-				<?php echo $copyright; ?>
+			<div class="bee-flourish"><?php echo file_get_contents( get_theme_file_path( '/assets/images/bee.svg' ) ); ?></div>
+			<?php echo $copyright; ?>
 		</div>
 	</footer>
 </div>

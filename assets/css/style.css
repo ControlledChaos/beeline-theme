@@ -812,12 +812,12 @@ h2 + .search-form {
   fill: #666666;
 }
 
-.site-logo {
+.bee-flourish {
   position: relative;
   height: 24px;
 }
 
-.site-logo svg {
+.bee-flourish svg {
   display: inline-block;
   max-width: 24px;
   position: absolute;
@@ -829,7 +829,7 @@ h2 + .search-form {
   overflow: visible;
 }
 
-.site-logo:before {
+.bee-flourish:before {
   content: '';
   position: absolute;
   display: block;
@@ -840,7 +840,7 @@ h2 + .search-form {
   background: #ffc200;
 }
 
-.site-logo:after {
+.bee-flourish:after {
   content: '';
   position: absolute;
   display: block;
@@ -978,14 +978,14 @@ h2 + .search-form {
             justify-content: space-between;
     padding: 0;
   }
-  .site-logo {
+  .bee-flourish {
     position: relative;
     height: 24px;
   }
-  .site-logo svg {
+  .bee-flourish svg {
     right: 0;
   }
-  .site-logo:before, .site-logo:after {
+  .bee-flourish:before, .bee-flourish:after {
     left: 0;
     right: 32px;
   }
@@ -1775,9 +1775,16 @@ figure.alignnone {
   padding: 1em 2em;
 }
 
+.site-footer .bee-flourish {
+  max-width: 1200px;
+  margin: 0 auto;
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
 .site-footer .copyright-text {
-  margin: 0;
+  margin: 1em 0 0;
   font-size: 0.8125rem;
   text-align: center;
-  color: #888888;
+  color: #666666;
 }
