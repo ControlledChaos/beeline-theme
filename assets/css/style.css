@@ -1390,7 +1390,7 @@ div.site-header-image + div.entry-content {
 
 .roster-front .roster-front-wrap .roster-preview-grid figure:before, .roster-front .roster-front-wrap .roster-preview-grid figure:after {
   content: '';
-  background: #ffc200;
+  background: #ffd900;
   display: block;
   position: absolute;
   top: 0;
@@ -1408,13 +1408,14 @@ div.site-header-image + div.entry-content {
 .roster-front .roster-front-wrap .roster-preview-grid figure:after {
   mix-blend-mode: multiply;
   z-index: 3;
-  opacity: 0.8;
+  opacity: 0.875;
 }
 
 .roster-front .roster-front-wrap .roster-preview-grid figure img {
   max-width: 98px;
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
+  opacity: 0.9;
 }
 
 .roster-front h1,

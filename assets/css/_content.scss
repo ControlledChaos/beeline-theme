@@ -183,7 +183,7 @@ div.site-header-image + div.entry-content {
 				&:before,
 				&:after {
 					content: '';
-					background: $yellow;
+					background: #ffd900;
 					display: block;
 					position: absolute;
 					top: 0;
@@ -201,13 +201,14 @@ div.site-header-image + div.entry-content {
 				&:after {
 					mix-blend-mode: multiply;
 					z-index: 3;
-					opacity: 0.8;
+					opacity: 0.875;
 				}
 
 				img {
 					max-width: 98px;
 					-webkit-filter: grayscale(100%);
 							filter: grayscale(100%);
+					opacity: 0.9;
 				}
 			}
 		}
