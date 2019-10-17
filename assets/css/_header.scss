@@ -13,6 +13,12 @@
 	flex-direction: column;
 }
 
+#beeline-web-logo-header {
+	max-width: 320px;
+	margin-top: $px40;
+	fill: $medium_gray;
+}
+
 .site-logo {
 	position: relative;
 	height: 24px;

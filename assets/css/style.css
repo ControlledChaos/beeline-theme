@@ -806,6 +806,12 @@ h2 + .search-form {
           flex-direction: column;
 }
 
+#beeline-web-logo-header {
+  max-width: 320px;
+  margin-top: 2.5rem;
+  fill: #666666;
+}
+
 .site-logo {
   position: relative;
   height: 24px;
