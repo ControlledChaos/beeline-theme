@@ -238,6 +238,7 @@ final class Functions {
 		 *
 		 * @since 1.0.0
 		 */
+		add_editor_style( 'https://use.typekit.net/jyo4had.css', [], '', 'screen' );
 		add_editor_style( '/assets/css/editor.min.css', [ 'beeline-admin' ], '', 'screen' );
 
 	}
