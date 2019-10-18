@@ -836,7 +836,7 @@ h2 + .search-form {
   top: 12px;
   left: 0;
   right: 32px;
-  height: 1px;
+  height: 2px;
   background: #ffc200;
 }
 
@@ -848,8 +848,7 @@ h2 + .search-form {
   left: 0;
   right: 32px;
   height: 1px;
-  background: rgba(0, 0, 0, 0.35);
-  background: #ffc200;
+  background: rgba(0, 0, 0, 0.2625);
 }
 
 .site-title {
