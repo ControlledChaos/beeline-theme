@@ -1388,7 +1388,7 @@ div.site-header-image + div.entry-content {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin: 1em auto 0;
-  width: 300px;
+  max-width: 306px;
 }
 
 .roster-front .roster-front-wrap .roster-preview-grid li {
@@ -1424,10 +1424,18 @@ div.site-header-image + div.entry-content {
 }
 
 .roster-front .roster-front-wrap .roster-preview-grid figure img {
-  max-width: 98px;
+  max-width: 100px;
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
   opacity: 0.9;
+}
+
+.roster-front .roster-front-wrap .roster-preview-grid.roster-no-content {
+  max-width: 366px;
+}
+
+.roster-front .roster-front-wrap .roster-preview-grid.roster-no-content figure img {
+  max-width: 120px;
 }
 
 .roster-front h1,

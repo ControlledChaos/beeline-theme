@@ -170,7 +170,7 @@ div.site-header-image + div.entry-content {
 			-ms-flex-wrap: wrap;
 			    flex-wrap: wrap;
 			margin: 1em auto 0;
-			width: 300px;
+			max-width: 306px;
 
 			li {
 				border: solid 1px $white;
@@ -205,10 +205,20 @@ div.site-header-image + div.entry-content {
 				}
 
 				img {
-					max-width: 98px;
+					max-width: 100px;
 					-webkit-filter: grayscale(100%);
 							filter: grayscale(100%);
 					opacity: 0.9;
+				}
+			}
+
+			&.roster-no-content {
+				max-width: 366px;
+
+				figure {
+					img {
+						max-width: 120px;
+					}
 				}
 			}
 		}
