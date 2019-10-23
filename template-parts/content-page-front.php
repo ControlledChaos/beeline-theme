@@ -52,7 +52,7 @@ if ( class_exists( 'acf_pro' ) ) :
 
 	<?php
 	// Roster section.
-	if ( get_field( 'roster_front_heading' ) && get_field( 'roster_front_content' ) ) : ?>
+	if ( get_field( 'roster_front_heading' ) ) : ?>
 	<div class="roster-front">
 		<div class="roster-front-wrap">
 			<div>
