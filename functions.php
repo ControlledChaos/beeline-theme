@@ -225,9 +225,8 @@ final class Functions {
 		 * @since  1.0.0
 		 */
 		register_nav_menus( [
-			'main'   => __( 'Main Menu', 'beeline-theme' ),
-			// 'footer' => __( 'Footer Menu', 'beeline-theme' ),
-			// 'social' => __( 'Social Menu', 'beeline-theme' )
+			'main'         => __( 'Main Menu', 'beeline-theme' ),
+			'admin-header' => __( 'Admin Header', 'beeline-theme' )
 		] );
 
 		/**
@@ -466,6 +465,9 @@ final class Functions {
 		require get_theme_file_path( '/includes/template-functions.php' );
 		require get_theme_file_path( '/includes/template-tags.php' );
 		require get_theme_file_path( '/includes/customizer.php' );
+
+		// Disable access to the Customizer.
+		require get_theme_file_path( '/includes/class-customizer-remove-all.php' );
 
 	}
 
