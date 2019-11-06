@@ -1032,3 +1032,25 @@ html .backend-tabbed-content .ui-button.ui-state-disabled:hover {
 		color: $text;
 	}
 }
+
+/**
+ * Admin footer
+ */
+ .admin-footer {
+	margin-top: 2em;
+	padding: 1em 2em 1em 1em;
+
+	.bee-flourish {
+		max-width: 100%;
+		margin: 0 auto;
+		-webkit-transform: scaleX(-1);
+		        transform: scaleX(-1);
+	}
+
+	.copyright-text {
+		margin: 1em 0 0;
+		font-size: $px13;
+		text-align: center;
+		color: $medium_gray;
+	}
+}

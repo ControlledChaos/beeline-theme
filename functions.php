@@ -134,6 +134,9 @@ final class Functions {
 		// Login title.
 		add_filter( 'login_headertext', [ $this, 'login_url_title' ] );
 
+		// Admin footer.
+		add_action( 'in_admin_footer', [ $this, 'admin_footer' ] );
+
 	}
 
 	/**
@@ -648,6 +651,17 @@ final class Functions {
 		);
 
 		return $site_title;
+	}
+
+	/**
+	 * Admin footer
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return string Returns the footer markup.
+	 */
+	public function admin_footer() {
+		get_template_part( 'template-parts/admin-footer' );
 	}
 
 }

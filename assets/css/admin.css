@@ -1723,3 +1723,25 @@ html .backend-tabbed-content .ui-button.ui-state-disabled:hover {
   line-height: 1.5;
   color: #444444;
 }
+
+/**
+ * Admin footer
+ */
+.admin-footer {
+  margin-top: 2em;
+  padding: 1em 2em 1em 1em;
+}
+
+.admin-footer .bee-flourish {
+  max-width: 100%;
+  margin: 0 auto;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.admin-footer .copyright-text {
+  margin: 1em 0 0;
+  font-size: 0.8125rem;
+  text-align: center;
+  color: #666666;
+}
