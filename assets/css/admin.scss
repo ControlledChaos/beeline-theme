@@ -110,7 +110,7 @@ input {
 	text-transform: none;
 }
 
-.mixes-dashboard-post-managment {
+.beeline-dashboard-post-managment {
 	margin-top: 2em;
 	padding-top: 0;
 	border-top: solid 1px $pale_gray;
@@ -554,13 +554,17 @@ background: #d46f15;
 	color: $medium_gray;
 }
 
+#adminmenu li.wp-menu-separator ~ li.wp-menu-separator {
+	height: 0px;
+	margin: 0;
+}
+
 /**
 * Welcome panel
 */
 .welcome-panel {
-	margin: 0;
+	margin: 0 0 $px30;
 	padding: 0;
-	border-top: solid 0px #eee !important;
 	border: none;
 	box-shadow: none;
 }
@@ -570,9 +574,14 @@ background: #d46f15;
 	padding: 2em 0;
 }
 
+.intro-image {
+	max-width: 100%;
+	margin: $px20 0 0;
+}
+
 .welcome-panel h3,
 .welcome-panel h4,
-.mixes-dashboard-post-type-actions a {
+.beeline-dashboard-post-type-actions a {
 	font-family: $display_font;
 	font-weight: normal;
 	font-weight: 600;
@@ -586,7 +595,7 @@ background: #d46f15;
 	letter-spacing: 0.0475em;
 }
 
-.mixes-dashboard-post-type-actions li {
+.beeline-dashboard-post-type-actions li {
 	border: solid 1px #ccc;
 
 	p {
@@ -598,13 +607,32 @@ background: #d46f15;
 	}
 }
 
-.mixes-dashboard-post-type-actions-icon .dashicons:before,
-.mixes-dashboard-content-actions-icon .dashicons:before {
+.beeline-dashboard-post-type-actions-icon .dashicons:before,
+.beeline-dashboard-content-actions-icon .dashicons:before {
 	color: $medium_gray;
 }
 
 #dashboard-widgets-wrap {
 	display: none;
+}
+
+.beeline-dashboard-post-type-actions,
+.beeline-dashboard-content-actions {
+
+	p {
+		font-size: $px16;
+	}
+
+	.dashicons {
+		&:before {
+			color: $medium_gray;
+		}
+	}
+}
+
+.beeline-dashboard-post-type-actions .dashicons:before,
+.beeline-dashboard-content-actions .dashicons:before {
+	color: $medium_gray;
 }
 
 /* Pointers */

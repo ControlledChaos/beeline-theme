@@ -1,6 +1,6 @@
 <?php
 /**
- * BS Theme functions
+ * Beeline Theme functions
  *
  * A basic starter theme for WordPress and ClassicPress.
  *
@@ -16,18 +16,18 @@
 /**
  * License & Warranty
  *
- * BS Theme is free software: you can redistribute it and/or modify
+ * Beeline Theme is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 2 of the License, or
  * any later version.
  *
- * BS Theme is distributed in the hope that it will be useful,
+ * Beeline Theme is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with BS Theme. If not, see {URI to Plugin License}.
+ * along with Beeline Theme. If not, see {URI to Plugin License}.
  */
 
 // Namespace specificity for theme functions & filters.
@@ -42,7 +42,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
 /**
- * BS Theme functions class
+ * Define the companion plugin path: directory and core file name.
+ *
+ * @since  1.0.0
+ * @return string Returns the plugin path of the companion.
+ */
+if ( ! defined( 'BEELINE_PLUGIN' ) ) {
+	define( 'BEELINE_PLUGIN', 'beeline-plugin/beeline-plugin.php' );
+}
+
+/**
+ * Beeline Theme functions class
  *
  * @since  1.0.0
  * @access public
@@ -335,7 +345,37 @@ final class Functions {
 	 * @access public
 	 * @return void
 	 */
-	public function admin_scripts() {}
+	public function admin_scripts() {
+
+		/**
+		 * Slick slider for the dashboard intro.
+		 *
+		 * Only if the Beeline plugin and the Advanced
+		 * Custom Fields Pro plugin are active.
+		 */
+		if ( is_plugin_active( BEELINE_PLUGIN ) && class_exists( 'acf_pro' ) ) {
+
+			wp_enqueue_script( 'beeline-slick', get_theme_file_uri( '/assets/js/slick.min.js' ), [ 'jquery' ], null, true );
+			wp_add_inline_script( 'beeline-slick', '
+				jQuery(".intro-slides").slick({
+					autoplay: true,
+					autoplaySpeed: 4500,
+					slidesToShow: 1,
+					arrows: false,
+					dots: false,
+					infinite: true,
+					speed: 800,
+					adaptiveHeight: true,
+					variableWidth: false,
+					mobileFirst: true,
+					draggable: false,
+					fade: true,
+					pauseOnHover: false
+				});
+			' );
+
+		}
+	}
 
 	/**
 	 * Frontend styles
@@ -382,6 +422,16 @@ final class Functions {
 		wp_enqueue_style( 'beeline-adobe-fonts', 'https://use.typekit.net/jyo4had.css', [], '', 'screen' );
 
 		wp_enqueue_style( 'beeline-admin', get_theme_file_uri( '/assets/css/admin.min.css' ), [], '' );
+
+		/**
+		 * Slick slider for the dashboard intro.
+		 *
+		 * Only if the Beeline plugin and the Advanced
+		 * Custom Fields Pro plugin are active.
+		 */
+		if ( is_plugin_active( BEELINE_PLUGIN ) && class_exists( 'acf_pro' ) ) {
+			wp_enqueue_style( 'beeline-slick', get_theme_file_uri( '/assets/css/slick.min.css' ), [], '', 'screen' );
+		}
 
 	}
 
