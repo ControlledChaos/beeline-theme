@@ -144,7 +144,7 @@ msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
 #. Theme Name of the plugin/theme
-msgid "BS Theme"
+msgid "Beeline Theme"
 msgstr ""
 
 #. Theme URI of the plugin/theme
