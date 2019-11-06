@@ -10,12 +10,12 @@
 ?>
 
 <?php
-// Check for the Advanced Custom Fields plugin.
+// Check for the Advanced Custom Fields Pro plugin.
 if ( class_exists( 'acf_pro' ) ) :
 
 	// Intro slides and content.
 	$slides = get_field( 'beeline_intro_gallery' );
-	$size = 'slide-large';
+	$size   = 'slide-large';
     if ( $slides ) : ?>
     <div class="intro-image">
         <div id="slick-flexbox-fix"><!-- Stops SlickJS from getting original image rather than the intro-large size" -->
@@ -146,5 +146,5 @@ else : ?>
 </article>
 <?php
 
-// End check for the Advanced Custom Fields plugin.
+// End check for the Advanced Custom Fields Pro plugin.
 endif; ?>
