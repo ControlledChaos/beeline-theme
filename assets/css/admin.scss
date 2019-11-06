@@ -1,6 +1,8 @@
 @import '_variables';
 @import '_typography';
 @import '_admin_toolbar';
+@import '_header';
+@import '_navigation';
 
 body,
 .postbox .inside {
@@ -25,6 +27,11 @@ body,
 
 #wpcontent {
 	overflow-x: hidden;
+	padding: 0 2em;
+
+	.header-content-wrapper {
+		padding: 0;
+	}
 }
 
 .wrap > h1,
@@ -62,6 +69,7 @@ p.description {
 
 #screen-meta-links .screen-meta-toggle {
 	top: 1px;
+	right: 2em;
 }
 
 #screen-meta-links {
@@ -94,7 +102,7 @@ input {
 
 .wp-admin .main-navigation {
 	margin-top: 0;
-	padding-top: 1em;
+	padding-top: 2.5em;
 }
 
 #screen-meta-links button {
@@ -104,7 +112,7 @@ input {
 
 .mixes-dashboard-post-managment {
 	margin-top: 2em;
-	padding-top: 1em;
+	padding-top: 0;
 	border-top: solid 1px $pale_gray;
 }
 
@@ -555,6 +563,11 @@ background: #d46f15;
 	border-top: solid 0px #eee !important;
 	border: none;
 	box-shadow: none;
+}
+
+.welcome-panel-content {
+	margin: 0;
+	padding: 2em 0;
 }
 
 .welcome-panel h3,
