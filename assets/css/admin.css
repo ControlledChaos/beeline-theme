@@ -1298,11 +1298,6 @@ ul#adminmenu > li.current > a.current:after {
   font-size: 0.9375rem;
 }
 
-.beeline-dashboard-post-type-actions-icon .dashicons:before,
-.beeline-dashboard-content-actions-icon .dashicons:before {
-  color: #666666;
-}
-
 #dashboard-widgets-wrap {
   display: none;
 }
@@ -1314,12 +1309,7 @@ ul#adminmenu > li.current > a.current:after {
 
 .beeline-dashboard-post-type-actions .dashicons:before,
 .beeline-dashboard-content-actions .dashicons:before {
-  color: #666666;
-}
-
-.beeline-dashboard-post-type-actions .dashicons:before,
-.beeline-dashboard-content-actions .dashicons:before {
-  color: #666666;
+  color: #888;
 }
 
 /* Pointers */

@@ -607,11 +607,6 @@ background: #d46f15;
 	}
 }
 
-.beeline-dashboard-post-type-actions-icon .dashicons:before,
-.beeline-dashboard-content-actions-icon .dashicons:before {
-	color: $medium_gray;
-}
-
 #dashboard-widgets-wrap {
 	display: none;
 }
@@ -625,14 +620,9 @@ background: #d46f15;
 
 	.dashicons {
 		&:before {
-			color: $medium_gray;
+			color: #888;
 		}
 	}
-}
-
-.beeline-dashboard-post-type-actions .dashicons:before,
-.beeline-dashboard-content-actions .dashicons:before {
-	color: $medium_gray;
 }
 
 /* Pointers */
