@@ -1397,10 +1397,17 @@ div.site-header-image + div.entry-content {
 
 .roster-front .roster-front-wrap .roster-preview-grid figure {
   position: relative;
+}
+
+.roster-front .roster-front-wrap .roster-preview-grid figure img {
+  max-width: 100px;
+}
+
+.roster-front .roster-front-wrap .roster-preview-grid.yellow figure {
   background: #ffffff;
 }
 
-.roster-front .roster-front-wrap .roster-preview-grid figure:before, .roster-front .roster-front-wrap .roster-preview-grid figure:after {
+.roster-front .roster-front-wrap .roster-preview-grid.yellow figure:before, .roster-front .roster-front-wrap .roster-preview-grid.yellow figure:after {
   content: '';
   background: #ffd900;
   display: block;
@@ -1412,19 +1419,18 @@ div.site-header-image + div.entry-content {
   pointer-events: none;
 }
 
-.roster-front .roster-front-wrap .roster-preview-grid figure:before {
+.roster-front .roster-front-wrap .roster-preview-grid.yellow figure:before {
   mix-blend-mode: screen;
   opacity: 0.1;
 }
 
-.roster-front .roster-front-wrap .roster-preview-grid figure:after {
+.roster-front .roster-front-wrap .roster-preview-grid.yellow figure:after {
   mix-blend-mode: multiply;
   z-index: 3;
   opacity: 0.875;
 }
 
-.roster-front .roster-front-wrap .roster-preview-grid figure img {
-  max-width: 100px;
+.roster-front .roster-front-wrap .roster-preview-grid.yellow figure img {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
   opacity: 0.9;

@@ -53,6 +53,7 @@ if ( class_exists( 'acf_pro' ) ) :
 	<?php
 	// Roster section.
 	if ( get_field( 'roster_front_heading' ) ) :
+
 	// Layout changes if there is roster content.
 	if ( ! empty( get_field( 'roster_front_content' ) ) ) {
 		$preview_size = 'thumbnail';
@@ -60,6 +61,13 @@ if ( class_exists( 'acf_pro' ) ) :
 	} else {
 		$preview_size = 'video-sm';
 		$grid_class   = 'roster-no-content';
+	}
+
+	// Class for yellow grid image filter.
+	if ( get_field( 'roster_front_yellow' ) ) {
+		$filter = ' yellow';
+	} else {
+		$filter = ' no-filter';
 	}
 	?>
 	<div class="roster-front">
@@ -90,7 +98,7 @@ if ( class_exists( 'acf_pro' ) ) :
 				$query = new WP_Query( $args );
 
 				if ( $query->have_posts() ) : ?>
-				<ul class="roster-preview-grid <?php echo $grid_class; ?>">
+				<ul class="roster-preview-grid <?php echo $grid_class . $filter; ?>">
 					<?php while ( $query->have_posts() ) : $query->the_post();
 					$image  = get_field( 'client_featured_image' );
 					$size   = $preview_size;
