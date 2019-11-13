@@ -121,9 +121,9 @@
 			height: auto;
 			margin: 0;
 			padding: 0;
-			min-height: 600px;
-			-o-object-fit: cover;
-			   object-fit: cover;
+			min-height: 180px;
+			-o-object-fit: contain;
+			   object-fit: contain;
 			-o-object-position: 50% 50%;
 			   object-position: 50% 50%
 		}
@@ -176,10 +176,11 @@
 				margin-top: $px10;
 				font-size: $px19;
 				font-weight: 400;
+				line-height: 1.2;
 				text-shadow: 0.05em 0.05em 0.05em rgba(0,0,0,0.7);
 
 				&:first-of-type {
-					margin-top: 2em;
+					margin-top: 1em;
 				}
 			}
 		}
@@ -224,6 +225,15 @@
 
 	.intro-image {
 
+		figure {
+
+			img {
+				min-height: 600px;
+				-o-object-fit: cover;
+				   object-fit: cover;
+			}
+		}
+
 		.intro-content {
 			padding: 2em;
 
@@ -231,6 +241,15 @@
 
 				h2 {
 					font-size: $px35;
+					line-height: 1.2;
+				}
+
+				p {
+					line-height: 1.5;
+
+					&:first-of-type {
+						margin-top: 2em;
+					}
 				}
 			}
 		}

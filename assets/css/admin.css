@@ -377,9 +377,9 @@ ul {
   height: auto;
   margin: 0;
   padding: 0;
-  min-height: 600px;
-  -o-object-fit: cover;
-  object-fit: cover;
+  min-height: 180px;
+  -o-object-fit: contain;
+  object-fit: contain;
   -o-object-position: 50% 50%;
   object-position: 50% 50%;
 }
@@ -428,11 +428,12 @@ ul {
   margin-top: 0.625rem;
   font-size: 1.1875rem;
   font-weight: 400;
+  line-height: 1.2;
   text-shadow: 0.05em 0.05em 0.05em rgba(0, 0, 0, 0.7);
 }
 
 .intro-image .intro-content .intro-content-inner p:first-of-type {
-  margin-top: 2em;
+  margin-top: 1em;
 }
 
 @media screen and (min-width: 960px) {
@@ -461,11 +462,23 @@ ul {
   .site-title {
     text-align: left;
   }
+  .intro-image figure img {
+    min-height: 600px;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
   .intro-image .intro-content {
     padding: 2em;
   }
   .intro-image .intro-content .intro-content-inner h2 {
     font-size: 2.1875rem;
+    line-height: 1.2;
+  }
+  .intro-image .intro-content .intro-content-inner p {
+    line-height: 1.5;
+  }
+  .intro-image .intro-content .intro-content-inner p:first-of-type {
+    margin-top: 2em;
   }
 }
 
