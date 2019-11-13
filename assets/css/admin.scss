@@ -1026,15 +1026,19 @@ html .backend-tabbed-content .ui-button.ui-state-disabled:hover {
 /**
  * Admin footer
  */
- .admin-footer {
+#wpfooter {
 	margin-top: 2em;
+	pointer-events: none;
+}
+
+.admin-footer {
 	padding: 1em 2em 1em 1em;
 
 	.bee-flourish {
 		max-width: 100%;
 		margin: 0 auto;
 		-webkit-transform: scaleX(-1);
-		        transform: scaleX(-1);
+				transform: scaleX(-1);
 	}
 
 	.copyright-text {

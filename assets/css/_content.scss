@@ -10,7 +10,7 @@
 }
 
 .content-area {
-	padding: 0 2em;
+	padding: 0 1em;
 }
 
 .archive .page-title {
@@ -140,7 +140,7 @@ div.site-header-image + div.entry-content {
 .roster-front,
 .contact-front,
 .additional-content-front {
-	padding: 0 2em;
+	padding: 0;
 }
 
 .roster-front {
@@ -226,7 +226,7 @@ div.site-header-image + div.entry-content {
 
 				figure {
 					img {
-						max-width: 120px;
+						max-width: 140px;
 					}
 				}
 			}
@@ -368,6 +368,10 @@ div.site-header-image + div.entry-content {
 
 @media screen and (min-width: 960px) {
 
+	.content-area {
+		padding: 0 2em;
+	}
+
 	.page-content,
 	.entry-content,
 	.entry-summary,
@@ -393,10 +397,21 @@ div.site-header-image + div.entry-content {
 			   -moz-box-orient: horizontal;
 			   -moz-box-direction: normal;
 			    -ms-flex-direction: row;
-			        flex-direction: row;
+					flex-direction: row;
+			padding: 0 2em;
 
 			.roster-preview-grid {
 				margin: 1em 0 0 1em;
+
+				&.roster-no-content {
+					max-width: 366px;
+
+					figure {
+						img {
+							max-width: 120px;
+						}
+					}
+				}
 			}
 		}
 	}

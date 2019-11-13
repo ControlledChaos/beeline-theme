@@ -153,7 +153,7 @@
 		   -moz-box-pack: center;
 		    -ms-flex-pack: center;
 		        justify-content: center;
-		padding: 2em;
+		padding: 2em 1em;
 		background: rgba(0,0,0,0.5325);
 
 		.intro-content-inner {
@@ -163,7 +163,8 @@
 			text-align: center;
 
 			h2 {
-				font-size: $px35;
+				font-size: $px23;
+				font-size: 7vw;
 				font-weight: 500;
 				line-height: 1.2;
 				letter-spacing: 0.03em;
@@ -224,6 +225,7 @@
 	.intro-image {
 
 		.intro-content {
+			padding: 2em;
 
 			.intro-content-inner {
 

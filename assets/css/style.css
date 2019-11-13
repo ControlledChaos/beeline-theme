@@ -935,7 +935,7 @@ h2 + .search-form {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 2em;
+  padding: 2em 1em;
   background: rgba(0, 0, 0, 0.5325);
 }
 
@@ -947,7 +947,8 @@ h2 + .search-form {
 }
 
 .intro-image .intro-content .intro-content-inner h2 {
-  font-size: 2.1875rem;
+  font-size: 1.4375rem;
+  font-size: 7vw;
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: 0.03em;
@@ -991,6 +992,9 @@ h2 + .search-form {
   }
   .site-title {
     text-align: left;
+  }
+  .intro-image .intro-content {
+    padding: 2em;
   }
   .intro-image .intro-content .intro-content-inner h2 {
     font-size: 2.1875rem;
@@ -1235,7 +1239,7 @@ h2 + .search-form {
 }
 
 .content-area {
-  padding: 0 2em;
+  padding: 0 1em;
 }
 
 .archive .page-title {
@@ -1361,7 +1365,7 @@ div.site-header-image + div.entry-content {
 .roster-front,
 .contact-front,
 .additional-content-front {
-  padding: 0 2em;
+  padding: 0;
 }
 
 .roster-front {
@@ -1441,7 +1445,7 @@ div.site-header-image + div.entry-content {
 }
 
 .roster-front .roster-front-wrap .roster-preview-grid.roster-no-content figure img {
-  max-width: 120px;
+  max-width: 140px;
 }
 
 .roster-front h1,
@@ -1575,6 +1579,9 @@ div.site-header-image + div.entry-content {
 }
 
 @media screen and (min-width: 960px) {
+  .content-area {
+    padding: 0 2em;
+  }
   .page-content h1,
   .page-content h2,
   .entry-content h1,
@@ -1610,6 +1617,7 @@ div.site-header-image + div.entry-content {
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
+    padding: 0 2em;
   }
   .page-content .roster-front-wrap .roster-preview-grid,
   .entry-content .roster-front-wrap .roster-preview-grid,
@@ -1617,6 +1625,20 @@ div.site-header-image + div.entry-content {
   .roster-front .roster-front-wrap .roster-preview-grid,
   .additional-content-front .roster-front-wrap .roster-preview-grid {
     margin: 1em 0 0 1em;
+  }
+  .page-content .roster-front-wrap .roster-preview-grid.roster-no-content,
+  .entry-content .roster-front-wrap .roster-preview-grid.roster-no-content,
+  .entry-summary .roster-front-wrap .roster-preview-grid.roster-no-content,
+  .roster-front .roster-front-wrap .roster-preview-grid.roster-no-content,
+  .additional-content-front .roster-front-wrap .roster-preview-grid.roster-no-content {
+    max-width: 366px;
+  }
+  .page-content .roster-front-wrap .roster-preview-grid.roster-no-content figure img,
+  .entry-content .roster-front-wrap .roster-preview-grid.roster-no-content figure img,
+  .entry-summary .roster-front-wrap .roster-preview-grid.roster-no-content figure img,
+  .roster-front .roster-front-wrap .roster-preview-grid.roster-no-content figure img,
+  .additional-content-front .roster-front-wrap .roster-preview-grid.roster-no-content figure img {
+    max-width: 120px;
   }
 }
 

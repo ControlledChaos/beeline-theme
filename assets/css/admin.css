@@ -403,7 +403,7 @@ ul {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 2em;
+  padding: 2em 1em;
   background: rgba(0, 0, 0, 0.5325);
 }
 
@@ -415,7 +415,8 @@ ul {
 }
 
 .intro-image .intro-content .intro-content-inner h2 {
-  font-size: 2.1875rem;
+  font-size: 1.4375rem;
+  font-size: 7vw;
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: 0.03em;
@@ -459,6 +460,9 @@ ul {
   }
   .site-title {
     text-align: left;
+  }
+  .intro-image .intro-content {
+    padding: 2em;
   }
   .intro-image .intro-content .intro-content-inner h2 {
     font-size: 2.1875rem;
@@ -1717,8 +1721,12 @@ html .backend-tabbed-content .ui-button.ui-state-disabled:hover {
 /**
  * Admin footer
  */
-.admin-footer {
+#wpfooter {
   margin-top: 2em;
+  pointer-events: none;
+}
+
+.admin-footer {
   padding: 1em 2em 1em 1em;
 }
 
