@@ -322,24 +322,7 @@ final class Functions {
 	public function frontend_footer_scripts() {
 
 		if ( is_front_page() ) {
-			echo '
-			<script>
-			jQuery(".intro-slides").slick({
-				autoplay: true,
-				autoplaySpeed: 4500,
-				slidesToShow: 1,
-				arrows: false,
-				dots: false,
-				infinite: true,
-				speed: 800,
-				adaptiveHeight: true,
-				variableWidth: false,
-				mobileFirst: true,
-				draggable: false,
-				fade: true,
-				pauseOnHover: false
-			});
-			</script>';
+			echo '<script>jQuery(".intro-slides").slick({autoplay:true,autoplaySpeed:4500,slidesToShow:1,arrows:false,dots:false,infinite:true,speed:800,adaptiveHeight:true,variableWidth:false,mobileFirst:true,draggable:false,fade:true,pauseOnHover:false});</script>';
 		}
 
 	}
