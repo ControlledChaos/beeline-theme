@@ -94,6 +94,9 @@ final class Functions {
 		// Swap html 'no-js' class with 'js'.
 		add_action( 'wp_head', [ $this, 'js_detect' ], 0 );
 
+		// Remove WordPress 5.3 large images.
+		remove_action( 'plugins_loaded', '_wp_add_additional_image_sizes', 0 );
+
 		// Theme setup.
 		add_action( 'after_setup_theme', [ $this, 'setup' ] );
 
@@ -676,13 +679,13 @@ final class Functions {
  * @access public
  * @return object
  */
-function bs_theme() {
+ function beeline_theme() {
 
-	$bs_theme = Functions::get_instance();
+	$beeline_theme = Functions::get_instance();
 
-	return $bs_theme;
+	return $beeline_theme;
 
 }
 
 // Run the Functions class.
-bs_theme();
+beeline_theme();
